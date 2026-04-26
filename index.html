@@ -1,112 +1,370 @@
-VERSION: index.html v2.0.0
+<!--
+ARCHIVO: index.html
+VERSIÓN: v2.0.1
+FECHA: 2026-04-25
+PROYECTO: Landing institucional JVSys + Condo Admin
 DESCRIPCIÓN:
-Landing JVSys + CondoAdmin con enfoque marketing y SaaS.
-Incluye módulos:
-- Presentación institucional JVSys
-- Segmentación de usuario
-- Detección de necesidad
-- Beneficios CondoAdmin
-- Posicionamiento JVSys
+Landing profesional para JVSys con enfoque SaaS Audit-Proof, orientada a presentar
+Condo Admin como solución para administración de fraccionamientos y condominios.
 
-TOTAL LINEAS: 120
+CAMBIO PRINCIPAL v2.0.1:
+- Se corrige la documentación visible que aparecía en pantalla.
+- Toda la documentación interna queda encapsulada correctamente como comentario HTML.
+- Se mejora la presentación visual sin alterar el objetivo funcional de la landing.
+- Se conserva enfoque humano, comercial y profesional.
+- Se agrega estructura más limpia para futuras secciones SaaS.
 
-==================================================
+VERSIÓN ANTERIOR:
+index.html v2.0.0
+TOTAL DE LÍNEAS VERSIÓN ANTERIOR: 120
 
+VERSIÓN NUEVA:
+index.html v2.0.1
+TOTAL DE LÍNEAS VERSIÓN NUEVA: 370
+
+NOTA DE CONTROL:
+Este archivo debe reemplazar COMPLETAMENTE al index.html actual del repositorio.
+No aplicar parches parciales.
+-->
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JVSys - Plataforma SaaS</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JVSys | Soluciones SaaS Audit-Proof</title>
+  <meta name="description" content="JVSys desarrolla soluciones SaaS Audit-Proof para administración, control, cobranza, trazabilidad documental y reportes profesionales." />
+  <style>
+    :root {
+      --bg-primary: #06172b;
+      --bg-secondary: #0a2542;
+      --card-bg: rgba(18, 43, 72, 0.92);
+      --card-soft: rgba(24, 56, 92, 0.82);
+      --blue-main: #0877ff;
+      --blue-soft: #7cc6ff;
+      --text-main: #ffffff;
+      --text-muted: #d6e4f3;
+      --text-soft: #a9c5df;
+      --border-soft: rgba(255, 255, 255, 0.10);
+      --shadow-soft: 0 24px 80px rgba(0, 0, 0, 0.28);
+    }
 
-<style>
-body {
-    margin:0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(180deg,#0b1f3a,#020c1a);
-    color:#fff;
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-.container{
-    padding:20px;
-    max-width:900px;
-    margin:auto;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-.card{
-    background: rgba(255,255,255,0.05);
-    border-radius:20px;
-    padding:20px;
-    margin-bottom:20px;
-    backdrop-filter: blur(10px);
-}
+    body {
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text-main);
+      background:
+        radial-gradient(circle at 20% 10%, rgba(11, 115, 255, 0.22), transparent 28%),
+        radial-gradient(circle at 80% 0%, rgba(74, 178, 255, 0.14), transparent 30%),
+        linear-gradient(145deg, var(--bg-primary), var(--bg-secondary) 58%, #031121);
+      line-height: 1.45;
+    }
 
-h1,h2{
-    margin:0 0 10px 0;
-}
+    .page {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      padding: 34px 20px 60px;
+    }
 
-.btn{
-    display:inline-block;
-    padding:12px 20px;
-    border-radius:10px;
-    background:#016bf6;
-    color:#fff;
-    text-decoration:none;
-    font-weight:bold;
-}
+    .hero {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 26px;
+      align-items: stretch;
+      margin-bottom: 26px;
+    }
 
-.section-title{
-    font-size:18px;
-    color:#7fc4ff;
-}
-</style>
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-soft);
+      border-radius: 28px;
+      padding: 34px;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(10px);
+    }
+
+    .brand-title {
+      font-size: clamp(48px, 7vw, 78px);
+      font-weight: 900;
+      letter-spacing: -2px;
+      margin-bottom: 18px;
+    }
+
+    .headline {
+      font-size: clamp(30px, 5vw, 58px);
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      line-height: 1.03;
+      margin-bottom: 20px;
+    }
+
+    .subtitle {
+      font-size: clamp(20px, 3vw, 30px);
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--blue-soft);
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      font-weight: 800;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .product-title {
+      font-size: clamp(38px, 5vw, 64px);
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 22px;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 58px;
+      padding: 0 28px;
+      border-radius: 16px;
+      font-size: 19px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    }
+
+    .btn-primary {
+      color: #ffffff;
+      background: linear-gradient(135deg, #0877ff, #005bd8);
+      box-shadow: 0 16px 34px rgba(8, 119, 255, 0.34);
+    }
+
+    .btn-secondary {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin: 26px 0;
+    }
+
+    .section-grid.two {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mini-card {
+      background: var(--card-soft);
+      border: 1px solid var(--border-soft);
+      border-radius: 26px;
+      padding: 28px;
+      min-height: 220px;
+    }
+
+    .mini-card h2,
+    .mini-card h3 {
+      font-size: 30px;
+      line-height: 1.12;
+      margin-bottom: 16px;
+    }
+
+    .mini-card p,
+    .mini-card li {
+      font-size: 20px;
+      color: var(--text-muted);
+    }
+
+    .mini-card ul {
+      padding-left: 20px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .need-box {
+      background: linear-gradient(145deg, rgba(8, 119, 255, 0.22), rgba(255, 255, 255, 0.07));
+      border: 1px solid rgba(124, 198, 255, 0.26);
+    }
+
+    .wide-section {
+      margin-top: 26px;
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .benefit {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid var(--border-soft);
+      border-radius: 22px;
+      padding: 22px;
+    }
+
+    .benefit strong {
+      display: block;
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .benefit span {
+      display: block;
+      font-size: 16px;
+      color: var(--text-soft);
+    }
+
+    .footer {
+      margin-top: 28px;
+      padding: 28px;
+      text-align: center;
+      color: var(--text-soft);
+      font-size: 16px;
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .section-grid,
+      .section-grid.two,
+      .benefits {
+        grid-template-columns: 1fr;
+      }
+
+      .page {
+        padding: 22px 14px 42px;
+      }
+
+      .card,
+      .mini-card {
+        border-radius: 24px;
+        padding: 26px;
+      }
+
+      .brand-title {
+        font-size: 54px;
+      }
+
+      .headline {
+        font-size: 38px;
+      }
+
+      .subtitle,
+      .mini-card p,
+      .mini-card li {
+        font-size: 22px;
+      }
+
+      .button-row {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <main class="page">
+    <section class="hero" aria-label="Presentación principal JVSys">
+      <article class="card">
+        <h1 class="brand-title">JVSys</h1>
+        <p class="headline">Soluciones SaaS Audit-Proof para control, trazabilidad y confianza.</p>
+        <p class="subtitle">Desarrollamos plataformas profesionales para organizaciones que necesitan orden, claridad operativa y evidencia confiable.</p>
+        <div class="button-row">
+          <a class="btn btn-primary" href="mailto:xve.montes@gmail.com?subject=Solicitud%20de%20informaci%C3%B3n%20JVSys%20Condo%20Admin">Solicitar información</a>
+          <a class="btn btn-secondary" href="#condoadmin">Conocer Condo Admin</a>
+        </div>
+      </article>
 
-<div class="container">
+      <article class="card" id="condoadmin">
+        <span class="eyebrow">SaaS Condominal</span>
+        <h2 class="product-title">Condo Admin</h2>
+        <p class="subtitle">Administración profesional de fraccionamientos con control real de cobranza, documentos y reportes auditables.</p>
+      </article>
+    </section>
 
-<div class="card">
-<h1>JVSys</h1>
-<p>Soluciones SaaS Audit-Proof diseñadas para control, trazabilidad y confianza.</p>
-<a class="btn">Solicitar información</a>
-</div>
+    <section class="section-grid" aria-label="Segmentación y necesidad">
+      <article class="mini-card">
+        <h2>¿Para quién es?</h2>
+        <p>Para administradores, mesas directivas y desarrolladores que necesitan control total, evitar errores y tener claridad financiera real.</p>
+      </article>
 
-<div class="card">
-<div class="section-title">SAAS CONDOMINAL</div>
-<h2>Condo Admin</h2>
-<p>Administración profesional de fraccionamientos con control real de cobranza, documentos y reportes auditables.</p>
-</div>
+      <article class="mini-card need-box">
+        <h2>¿Qué necesidad resuelve?</h2>
+        <p>Cuando la cobranza, los comprobantes, los adeudos y los reportes viven dispersos, la administración pierde confianza. Condo Admin centraliza la operación.</p>
+      </article>
 
-<div class="card">
-<h2>¿Para quién es?</h2>
-<p>Para administradores, mesas directivas y desarrolladores que necesitan control total, evitar errores y tener claridad financiera real.</p>
-</div>
+      <article class="mini-card">
+        <h2>¿Por qué importa?</h2>
+        <p>Porque una administración transparente reduce conflictos, mejora la recuperación de cuotas y permite tomar decisiones con información verificable.</p>
+      </article>
+    </section>
 
-<div class="card">
-<h2>¿Por qué lo necesitas?</h2>
-<p>Si hoy tienes dudas en cuentas, falta de control o procesos manuales, CondoAdmin elimina incertidumbre y automatiza la operación.</p>
-</div>
+    <section class="card wide-section" aria-label="Beneficios principales de Condo Admin">
+      <span class="eyebrow">Beneficios operativos</span>
+      <h2 class="headline">Control profesional sin depender de hojas sueltas ni procesos improvisados.</h2>
+      <div class="benefits">
+        <div class="benefit">
+          <strong>Cobranza clara</strong>
+          <span>Pagos, adeudos y estados de cuenta con lógica consistente.</span>
+        </div>
+        <div class="benefit">
+          <strong>Documentos trazables</strong>
+          <span>Comprobantes y solicitudes con seguimiento administrativo.</span>
+        </div>
+        <div class="benefit">
+          <strong>Reportes auditables</strong>
+          <span>Información lista para revisión, control y toma de decisiones.</span>
+        </div>
+        <div class="benefit">
+          <strong>Enfoque SaaS</strong>
+          <span>Diseñado para crecer por fraccionamiento sin mezclar información.</span>
+        </div>
+      </div>
+    </section>
 
-<div class="card">
-<h2>Beneficios</h2>
-<ul>
-<li>Control audit-proof</li>
-<li>Automatización de cobranza</li>
-<li>Reportes claros</li>
-<li>Confianza para condóminos</li>
-</ul>
-</div>
+    <section class="section-grid two" aria-label="Posicionamiento JVSys">
+      <article class="mini-card">
+        <h3>JVSys desarrolla con visión audit-proof.</h3>
+        <p>No buscamos solo pantallas bonitas: diseñamos sistemas que expliquen, respalden y ordenen la operación real.</p>
+      </article>
 
-<div class="card">
-<h2>JVSys</h2>
-<p>Empresa tecnológica enfocada en soluciones confiables, escalables y diseñadas con visión SaaS profesional.</p>
-</div>
+      <article class="mini-card">
+        <h3>Próximamente más soluciones.</h3>
+        <p>Esta página será el punto de entrada a las aplicaciones SaaS desarrolladas por JVSys para administración, control y gestión especializada.</p>
+      </article>
+    </section>
 
-</div>
-
+    <footer class="footer">
+      <p>JVSys · Desarrollo de soluciones SaaS profesionales · Contacto: xve.montes@gmail.com</p>
+    </footer>
+  </main>
 </body>
 </html>
-
-==================================================
-FIN DE ARCHIVO
+<!-- FIN DE ARCHIVO: index.html v2.0.1 -->
