@@ -1,639 +1,409 @@
 <!--
 ARCHIVO: index.html
-VERSIÓN: v2.1.0
-FECHA: 2026-04-25
+VERSIÓN: v2.2.0
+FECHA: 2026-04-26
 PROYECTO: Landing institucional JVSys + módulo comercial Condo Admin
 DESCRIPCIÓN:
-Landing profesional para JVSys con estética visual alineada al diseño original solicitado:
-fondo azul marino tecnológico, navegación superior, hero institucional, bloque de atributos,
-portafolio de aplicaciones y módulo comercial específico para Condo Admin.
+Landing profesional para JVSys orientada a promoción de soluciones SaaS Audit-Proof.
+Incluye un módulo interno independiente para Condo Admin, pensado como pieza comercial
+para captar la atención de administradores, mesas directivas, desarrolladores inmobiliarios
+y responsables de fraccionamientos/condominios.
 
 OBJETIVO COMERCIAL:
-- Presentar JVSys como desarrollador de Apps SaaS Audit-Proof.
-- Mostrar el portafolio de proyectos actuales.
-- Convertir el botón de Condo Admin en acceso directo al módulo comercial Condo Admin.
-- Explicar Condo Admin desde una visión de arquitectura informática, marketing y necesidad real
-  de administradores, mesas directivas y usuarios de condominios/fraccionamientos.
+- Presentar JVSys como fabricante de plataformas SaaS serias, seguras y trazables.
+- Evitar imágenes abstractas o truncadas que no comuniquen valor.
+- Dirigir el botón Condo Admin hacia un módulo comercial independiente dentro de la landing.
+- Convertir el módulo Condo Admin en una propuesta clara: problema, solución, beneficios,
+  evidencia operativa, llamada a la acción y confianza.
+- Usar como base visual el cartel promocional de Condo Admin proporcionado por el usuario.
 
-CAMBIO PRINCIPAL v2.1.0:
-- Se descarta la estructura visual v2.0.1 por no corresponder al diseño original esperado.
-- Se reconstruye la landing completa con navegación, hero visual, beneficios, proyectos y footer.
-- Se agrega módulo comercial Condo Admin con propuesta de valor, detección de necesidad,
-  beneficios por perfil y llamados a la acción.
-- El botón de Condo Admin en el portafolio apunta al módulo interno #condo-admin.
-- Se mantiene documentación interna correctamente encapsulada en comentario HTML.
-- No es parche parcial: este archivo debe reemplazar completamente al index.html actual.
+CAMBIO PRINCIPAL v2.2.0:
+- Se elimina el visual abstracto/trunco de laptop/nube que no comunicaba profesionalismo.
+- Se rediseña el hero de JVSys con arquitectura visual limpia, seria y orientada a confianza.
+- El menú y la tarjeta de Condo Admin apuntan al módulo interno #condo-admin.
+- Se agrega módulo comercial Condo Admin tipo landing interna.
+- Se usa la imagen promocional condo-admin-promo.png sin recortarla.
+- Se integran rutas para logos reales del repositorio:
+  Logo_JVsys.png
+  Logo_Fracc.jpeg
+  condo-admin-promo.png
+- El diseño conserva estética azul profesional y enfoque SaaS Audit-Proof.
 
 VERSIÓN ANTERIOR:
-index.html v2.0.1
-TOTAL DE LÍNEAS VERSIÓN ANTERIOR: 370
+index.html v2.1.0
+TOTAL DE LÍNEAS VERSIÓN ANTERIOR: 639
 
 VERSIÓN NUEVA:
-index.html v2.1.0
-TOTAL DE LÍNEAS VERSIÓN NUEVA: 639
+index.html v2.2.0
+TOTAL DE LÍNEAS VERSIÓN NUEVA: 922
 
-ACTIVOS OPCIONALES:
-- Si deseas usar la imagen promocional de Condo Admin anexada en la conversación,
-  súbela al repositorio con el nombre: condo-admin-promo.png
-- Si deseas usar una imagen hero tecnológica de JVSys, súbela al repositorio con el nombre: jvsys-hero.png
-- El archivo funcionará aunque las imágenes no existan, mostrando tarjetas visuales generadas por CSS.
-
-NOTA DE CONTROL:
+INSTRUCCIÓN DE INSTALACIÓN:
 Este archivo debe reemplazar COMPLETAMENTE al index.html actual del repositorio.
 No aplicar parches parciales.
--->
 
+ARCHIVOS DE IMAGEN QUE DEBEN EXISTIR EN EL REPOSITORIO:
+- Logo_JVsys.png
+- Logo_Fracc.jpeg
+- condo-admin-promo.png
+
+FIN DE DOCUMENTACIÓN INTERNA
+-->
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JVSys | Desarrollo de Apps SaaS Audit-Proof</title>
-  <meta name="description" content="JVSys desarrolla aplicaciones SaaS Audit-Proof para administrar, operar y hacer crecer organizaciones con trazabilidad, seguridad y evidencia confiable." />
-
+  <meta name="description" content="JVSys desarrolla plataformas SaaS Audit-Proof para administración, cobranza, documentos, reportes y operación confiable. Condo Admin ayuda a administrar fraccionamientos con transparencia financiera y evidencia real." />
   <style>
     :root {
       --bg-0: #020814;
-      --bg-1: #06152b;
-      --panel: rgba(5, 22, 45, 0.82);
-      --line: rgba(111, 190, 255, 0.22);
-      --line-strong: rgba(83, 171, 255, 0.42);
-      --text: #ffffff;
-      --muted: #c8d8ec;
-      --soft: #89a9c9;
-      --blue: #0877ff;
-      --cyan: #48c7ff;
-      --shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
-      --radius: 24px;
+      --bg-1: #06162b;
+      --bg-2: #092a50;
+      --card: rgba(9, 28, 54, 0.86);
+      --card-2: rgba(12, 43, 78, 0.72);
+      --line: rgba(135, 199, 255, 0.22);
+      --line-strong: rgba(135, 199, 255, 0.42);
+      --blue: #0978ff;
+      --blue-2: #39c5ff;
+      --cyan: #8bdcff;
+      --white: #ffffff;
+      --muted: #c6d8ec;
+      --soft: #8fa9c3;
+      --green: #2fb36d;
+      --gold: #ffd36a;
+      --shadow: 0 28px 80px rgba(0, 0, 0, 0.38);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
       --max: 1180px;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-
     body {
       min-height: 100vh;
       font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
+      color: var(--white);
       background:
-        radial-gradient(circle at 70% 12%, rgba(12, 125, 255, 0.38), transparent 24%),
-        radial-gradient(circle at 18% 18%, rgba(25, 206, 255, 0.13), transparent 22%),
-        linear-gradient(180deg, #020814 0%, #06152b 48%, #020814 100%);
-      overflow-x: hidden;
+        radial-gradient(circle at 15% 0%, rgba(57, 197, 255, 0.16), transparent 28%),
+        radial-gradient(circle at 80% 8%, rgba(9, 120, 255, 0.20), transparent 30%),
+        linear-gradient(180deg, var(--bg-0), var(--bg-1) 42%, #020814);
+      line-height: 1.45;
     }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background:
-        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-      background-size: 42px 42px;
-      mask-image: radial-gradient(circle at center, black 0%, transparent 82%);
-      opacity: 0.35;
-      z-index: -2;
-    }
-
-    a { color: inherit; }
-    .page { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .shell { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
 
     .topbar {
       position: sticky;
       top: 0;
-      z-index: 30;
-      backdrop-filter: blur(18px);
-      background: rgba(2, 8, 20, 0.78);
-      border-bottom: 1px solid rgba(111, 190, 255, 0.14);
+      z-index: 50;
+      background: rgba(2, 8, 20, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(135, 199, 255, 0.16);
     }
-
-    .nav {
-      width: min(var(--max), calc(100% - 48px));
-      margin: 0 auto;
-      min-height: 82px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
-
-    .brand-mark {
-      width: 74px;
-      height: 74px;
-      display: grid;
-      place-items: center;
-      font-size: 42px;
-      font-weight: 900;
-      letter-spacing: -5px;
-      color: #6ed1ff;
-      text-shadow: 0 0 24px rgba(72, 199, 255, 0.85);
-    }
-
-    .brand-copy strong { display: block; font-size: 27px; line-height: 1; letter-spacing: -0.5px; }
-    .brand-copy span { display: block; color: var(--muted); font-size: 14px; line-height: 1.35; margin-top: 5px; }
-
-    .nav-links { display: flex; align-items: center; gap: 26px; font-size: 14px; }
-    .nav-links a { color: #ffffff; text-decoration: none; opacity: 0.95; }
-    .nav-links a:hover { color: var(--cyan); opacity: 1; }
-
-    .nav-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      padding: 14px 20px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, #0877ff, #0057df);
-      color: #ffffff;
-      font-weight: 800;
-      text-decoration: none;
-      box-shadow: 0 12px 34px rgba(8, 119, 255, 0.34);
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 0.92fr 1.08fr;
-      gap: 42px;
-      min-height: 520px;
-      align-items: center;
-      padding: 58px 0 42px;
-      border-bottom: 1px solid var(--line-strong);
-    }
-
-    .hero h1 { font-size: clamp(42px, 5vw, 64px); line-height: 1.02; letter-spacing: -1.8px; margin-bottom: 24px; }
-    .gradient-word { display: block; color: var(--cyan); text-shadow: 0 0 24px rgba(72, 199, 255, 0.48); }
-    .hero p { max-width: 540px; color: #e7f1ff; font-size: clamp(20px, 2.1vw, 27px); line-height: 1.35; margin-bottom: 34px; }
-
-    .button-row { display: flex; flex-wrap: wrap; gap: 18px; }
+    .nav { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 22px; }
+    .brand { display: flex; align-items: center; gap: 14px; min-width: 260px; }
+    .brand-logo { width: 62px; height: 62px; border-radius: 18px; object-fit: contain; filter: drop-shadow(0 0 18px rgba(57, 197, 255, 0.45)); }
+    .brand-name { font-size: 28px; font-weight: 900; letter-spacing: -0.7px; }
+    .brand-sub { color: var(--muted); font-size: 14px; margin-top: 2px; }
+    .menu { display: flex; align-items: center; justify-content: center; gap: 24px; font-size: 15px; font-weight: 700; color: #eaf5ff; }
+    .menu a { opacity: 0.9; transition: opacity 0.2s ease, color 0.2s ease; }
+    .menu a:hover { opacity: 1; color: var(--cyan); }
 
     .btn {
-      min-height: 58px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      padding: 0 24px;
+      gap: 9px;
+      min-height: 50px;
+      padding: 0 22px;
       border-radius: 12px;
-      font-size: 16px;
-      font-weight: 800;
-      text-decoration: none;
+      font-weight: 900;
       border: 1px solid transparent;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
       cursor: pointer;
+      white-space: nowrap;
     }
-
     .btn:hover { transform: translateY(-2px); }
-    .btn-primary { background: linear-gradient(135deg, #0981ff, #0057df); box-shadow: 0 18px 38px rgba(8, 119, 255, 0.32); color: #ffffff; }
-    .btn-outline { border-color: rgba(136, 199, 255, 0.54); background: rgba(255, 255, 255, 0.04); color: #ffffff; }
+    .btn-primary { background: linear-gradient(135deg, #0787ff, #005be3); color: #fff; box-shadow: 0 18px 36px rgba(9, 120, 255, 0.34); }
+    .btn-ghost { background: rgba(255, 255, 255, 0.05); border-color: rgba(141, 213, 255, 0.32); color: #e8f5ff; }
 
-    .hero-visual {
-      min-height: 430px;
-      border-radius: 30px;
-      position: relative;
-      overflow: hidden;
-      border: 1px solid rgba(111, 190, 255, 0.24);
-      background:
-        linear-gradient(145deg, rgba(5, 21, 43, 0.42), rgba(8, 38, 76, 0.82)),
-        url("jvsys-hero.png");
-      background-size: cover;
-      background-position: center;
-      box-shadow: var(--shadow);
-    }
+    .hero { padding: 76px 0 34px; }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 46px; align-items: center; }
+    .eyebrow { color: var(--cyan); font-size: 14px; font-weight: 900; text-transform: uppercase; letter-spacing: 2.6px; margin-bottom: 18px; }
+    .hero h1 { font-size: clamp(46px, 6vw, 80px); line-height: 0.98; letter-spacing: -2.5px; max-width: 720px; }
+    .accent { color: var(--blue-2); text-shadow: 0 0 28px rgba(57, 197, 255, 0.28); }
+    .lead { margin-top: 28px; color: var(--muted); font-size: clamp(20px, 2.5vw, 29px); line-height: 1.35; max-width: 650px; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 34px; }
 
-    .device {
-      position: absolute;
-      right: 52px;
-      top: 66px;
-      width: 430px;
-      height: 260px;
-      border: 1px solid rgba(111, 190, 255, 0.40);
-      border-radius: 22px;
-      background: linear-gradient(145deg, rgba(3, 18, 38, 0.88), rgba(10, 50, 101, 0.68));
-      box-shadow: 0 0 42px rgba(8, 119, 255, 0.35);
-      transform: perspective(900px) rotateY(-12deg) rotateX(2deg);
-    }
+    .trust-strip { margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--line); display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; }
+    .trust-item { display: grid; grid-template-columns: 48px 1fr; gap: 14px; align-items: start; }
+    .trust-icon { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; background: rgba(57, 197, 255, 0.10); border: 1px solid var(--line-strong); color: var(--cyan); font-size: 22px; font-weight: 900; }
+    .trust-item strong { display: block; font-size: 16px; margin-bottom: 4px; }
+    .trust-item span { color: var(--muted); font-size: 14px; line-height: 1.4; }
 
-    .device::before {
-      content: "☁";
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      font-size: 110px;
-      color: #4fd2ff;
-      text-shadow: 0 0 36px rgba(72, 199, 255, 0.95);
-    }
-
-    .floating-card {
-      position: absolute;
-      border: 1px solid rgba(111, 190, 255, 0.34);
-      background: rgba(4, 22, 45, 0.72);
-      border-radius: 18px;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.34);
-    }
-
-    .floating-card.one { width: 140px; height: 90px; left: 28px; top: 42px; }
-    .floating-card.two { width: 116px; height: 116px; right: 12px; top: 40px; }
-    .floating-card.three { width: 152px; height: 96px; left: 40px; bottom: 56px; }
-
-    .attribute-row {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 18px;
-      padding: 26px 0 40px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .attribute { display: grid; grid-template-columns: 46px 1fr; gap: 14px; align-items: start; }
-    .attribute-icon {
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      border: 1px solid rgba(72, 199, 255, 0.36);
-      color: #8bd8ff;
-      background: rgba(8, 119, 255, 0.10);
-      font-weight: 900;
-    }
-
-    .attribute h3 { font-size: 17px; margin-bottom: 7px; }
-    .attribute p { color: var(--muted); font-size: 14px; line-height: 1.48; }
-
-    .trust-panel {
-      display: grid;
-      grid-template-columns: 190px 1fr 0.92fr;
-      gap: 28px;
-      align-items: center;
-      margin: 34px 0;
-      padding: 30px;
-      border-radius: var(--radius);
+    .hero-panel {
+      border-radius: var(--radius-xl);
       border: 1px solid var(--line);
-      background: rgba(5, 22, 45, 0.70);
-    }
-
-    .shield-art {
-      width: 154px;
-      height: 154px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      font-size: 72px;
-      color: #8bd8ff;
-      background: radial-gradient(circle, rgba(72,199,255,0.22), transparent 60%), rgba(8,119,255,0.08);
-      border: 1px solid rgba(111, 190, 255, 0.28);
-    }
-
-    .trust-panel h2 { font-size: clamp(26px, 3vw, 36px); line-height: 1.15; margin-bottom: 14px; }
-    .trust-panel h2 span { color: var(--cyan); display: block; }
-    .trust-panel p, .trust-panel li { color: var(--muted); font-size: 16px; line-height: 1.55; }
-
-    .check-list { list-style: none; display: grid; gap: 14px; }
-    .check-list li { display: grid; grid-template-columns: 24px 1fr; gap: 12px; align-items: start; }
-    .check-list li::before {
-      content: "✓";
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      color: #aee7ff;
-      border: 1px solid rgba(72, 199, 255, 0.62);
-      font-weight: 900;
-      font-size: 14px;
-    }
-
-    .section-title { text-align: center; margin: 46px 0 28px; }
-    .section-title h2 { font-size: clamp(30px, 3.4vw, 42px); line-height: 1.1; margin-bottom: 8px; }
-    .section-title p { color: var(--muted); font-size: 18px; }
-
-    .projects { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
-
-    .project-card {
-      min-height: 360px;
-      padding: 22px 18px;
-      border-radius: 18px;
-      border: 1px solid rgba(111, 190, 255, 0.22);
-      background: rgba(5, 22, 45, 0.70);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      box-shadow: 0 20px 52px rgba(0,0,0,0.22);
-    }
-
-    .project-logo {
-      width: 118px;
-      height: 118px;
-      border-radius: 50%;
-      margin-bottom: 18px;
-      display: grid;
-      place-items: center;
-      font-size: 54px;
-      background: radial-gradient(circle at 30% 25%, #ffffff, #d7edff 64%, #8abce8);
-      color: #0a4d94;
-      box-shadow: 0 0 32px rgba(72,199,255,0.20);
-      overflow: hidden;
-    }
-
-    .project-card h3 { font-size: 20px; line-height: 1.15; margin-bottom: 12px; }
-    .project-card p { flex: 1; color: var(--muted); font-size: 14px; line-height: 1.55; }
-
-    .project-card a {
-      margin-top: 18px;
-      width: 100%;
-      min-height: 42px;
-      border-radius: 9px;
-      border: 1px solid rgba(72, 199, 255, 0.42);
-      display: grid;
-      place-items: center;
-      text-decoration: none;
-      color: #9edcff;
-      font-weight: 800;
-      font-size: 14px;
-    }
-
-    .project-card a:hover { background: rgba(8,119,255,0.20); color: #ffffff; }
-
-    .condo-module {
-      margin-top: 52px;
-      border-radius: 30px;
-      overflow: hidden;
-      border: 1px solid rgba(111, 190, 255, 0.30);
-      background: linear-gradient(180deg, rgba(233, 244, 255, 0.98), rgba(224, 239, 255, 0.92));
-      color: #153762;
+      background: linear-gradient(145deg, rgba(11, 55, 101, 0.58), rgba(4, 19, 39, 0.88)), radial-gradient(circle at 70% 20%, rgba(57, 197, 255, 0.24), transparent 34%);
+      min-height: 470px;
       box-shadow: var(--shadow);
-    }
-
-    .condo-hero {
+      padding: 34px;
       position: relative;
-      min-height: 640px;
-      padding: 54px 54px 42px;
       overflow: hidden;
-      background:
-        linear-gradient(90deg, rgba(238, 247, 255, 0.96) 0%, rgba(238, 247, 255, 0.86) 50%, rgba(238, 247, 255, 0.62) 100%),
-        url("condo-admin-promo.png");
-      background-size: cover;
-      background-position: center;
     }
-
-    .condo-hero::after {
+    .hero-panel::before {
       content: "";
       position: absolute;
-      inset: auto 0 0 0;
-      height: 132px;
-      background: linear-gradient(180deg, transparent, rgba(16, 72, 139, 0.95));
+      inset: 28px;
+      border: 1px solid rgba(141, 213, 255, 0.20);
+      border-radius: 24px;
+      background: linear-gradient(90deg, transparent 0 48%, rgba(57, 197, 255, 0.16) 49% 51%, transparent 52% 100%), linear-gradient(0deg, transparent 0 48%, rgba(57, 197, 255, 0.10) 49% 51%, transparent 52% 100%);
     }
+    .proof-card { position: absolute; width: 190px; min-height: 112px; padding: 18px; border-radius: 18px; border: 1px solid rgba(141, 213, 255, 0.28); background: rgba(2, 14, 30, 0.80); box-shadow: 0 20px 48px rgba(0, 0, 0, 0.25); }
+    .proof-card strong { display: block; font-size: 17px; margin-bottom: 8px; }
+    .proof-card span { color: var(--muted); font-size: 13px; }
+    .proof-card.one { top: 58px; left: 48px; }
+    .proof-card.two { top: 130px; right: 45px; }
+    .proof-card.three { bottom: 58px; left: 74px; }
+    .proof-card.four { bottom: 62px; right: 70px; }
+    .proof-core { position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none; }
+    .proof-badge { width: 150px; height: 150px; border-radius: 50%; display: grid; place-items: center; background: radial-gradient(circle, rgba(57, 197, 255, 0.40), rgba(9, 120, 255, 0.08) 68%, transparent); border: 1px solid rgba(141, 213, 255, 0.34); color: #fff; font-size: 48px; font-weight: 900; text-shadow: 0 0 24px rgba(57, 197, 255, 0.7); }
 
-    .condo-brand {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 28px;
-      margin-bottom: 38px;
+    .section { padding: 54px 0; }
+    .section-title { text-align: center; margin-bottom: 28px; }
+    .section-title h2 { font-size: clamp(30px, 4vw, 48px); letter-spacing: -1px; line-height: 1.12; }
+    .section-title p { color: var(--muted); font-size: 18px; margin-top: 8px; }
+
+    .confidence { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 22px; align-items: stretch; padding: 30px; border: 1px solid var(--line); border-radius: var(--radius-xl); background: rgba(5, 21, 44, 0.76); box-shadow: var(--shadow); }
+    .shield-box { border-radius: 24px; background: radial-gradient(circle at center, rgba(57, 197, 255, 0.22), rgba(4, 19, 39, 0.92)); border: 1px solid var(--line); display: grid; place-items: center; min-height: 260px; }
+    .shield { width: 132px; height: 152px; border-radius: 34px 34px 52px 52px; border: 3px solid rgba(141, 213, 255, 0.75); display: grid; place-items: center; font-size: 54px; color: var(--cyan); box-shadow: 0 0 50px rgba(57, 197, 255, 0.28); }
+    .confidence-text { padding: 12px 10px; display: grid; align-content: center; gap: 20px; }
+    .confidence-text h2 { font-size: clamp(28px, 3vw, 42px); line-height: 1.14; }
+    .confidence-text p { color: var(--muted); font-size: 18px; max-width: 700px; }
+    .check-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px 24px; margin-top: 8px; }
+    .check { color: #eaf5ff; font-size: 16px; display: flex; gap: 10px; align-items: flex-start; }
+    .check::before { content: "✓"; flex: 0 0 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; color: #04111f; background: var(--cyan); font-weight: 900; font-size: 14px; }
+
+    .apps { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
+    .app-card { border-radius: 20px; border: 1px solid var(--line); background: linear-gradient(180deg, rgba(10, 39, 74, 0.78), rgba(4, 17, 36, 0.86)); padding: 20px 16px; text-align: center; min-height: 315px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; }
+    .app-card:hover { transform: translateY(-5px); border-color: rgba(141, 213, 255, 0.62); box-shadow: 0 18px 44px rgba(0, 0, 0, 0.26); }
+    .app-icon { width: 92px; height: 92px; border-radius: 50%; background: #f4fbff; color: #0a3e78; display: grid; place-items: center; font-size: 44px; font-weight: 900; margin: 0 auto 14px; overflow: hidden; }
+    .app-icon img { width: 100%; height: 100%; object-fit: cover; }
+    .app-card h3 { font-size: 19px; margin-bottom: 10px; }
+    .app-card p { color: var(--muted); font-size: 14px; line-height: 1.55; margin-bottom: 16px; }
+    .mini-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 38px; padding: 0 15px; border: 1px solid rgba(141, 213, 255, 0.35); border-radius: 10px; color: var(--cyan); font-weight: 800; font-size: 13px; }
+
+    .condo-module { padding: 76px 0; background: linear-gradient(180deg, rgba(234, 246, 255, 0.02), rgba(234, 246, 255, 0.05)), radial-gradient(circle at 90% 30%, rgba(57, 197, 255, 0.12), transparent 28%); }
+    .condo-card { background: #edf7ff; color: #123762; border-radius: 34px; overflow: hidden; box-shadow: 0 34px 100px rgba(0, 0, 0, 0.42); border: 1px solid rgba(255, 255, 255, 0.55); }
+    .condo-hero { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 0; min-height: 640px; }
+    .condo-copy { padding: 56px 52px; background: linear-gradient(180deg, rgba(237, 247, 255, 0.96), rgba(225, 239, 250, 0.96)); display: flex; flex-direction: column; justify-content: center; }
+    .condo-brand-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 48px; }
+    .condo-brand { display: flex; align-items: center; gap: 14px; font-weight: 900; color: #123c74; font-size: 28px; }
+    .condo-brand img { width: 54px; height: 54px; object-fit: contain; border-radius: 12px; }
+    .condo-product { text-align: right; }
+    .condo-product strong { display: block; font-size: 32px; color: #123c74; line-height: 1; }
+    .condo-product span { color: #526f8d; font-size: 15px; }
+    .condo-copy h2 { font-size: clamp(42px, 5vw, 70px); line-height: 1.02; letter-spacing: -2px; color: #143f78; margin-bottom: 22px; }
+    .condo-copy .condo-lead { font-size: clamp(20px, 2.2vw, 28px); color: #2f4d70; line-height: 1.32; margin-bottom: 30px; max-width: 680px; }
+    .condo-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 34px; }
+    .condo-actions .btn-ghost { color: #123c74; background: #ffffff; border-color: rgba(18, 60, 116, 0.22); }
+    .condo-list { display: grid; gap: 16px; margin-top: 8px; }
+    .condo-item { display: grid; grid-template-columns: 38px 1fr; gap: 14px; align-items: start; }
+    .condo-item .mark { width: 38px; height: 38px; border-radius: 50%; background: var(--green); color: white; display: grid; place-items: center; font-weight: 900; font-size: 20px; box-shadow: 0 8px 18px rgba(47, 179, 109, 0.28); }
+    .condo-item strong { display: block; color: #133c72; font-size: 22px; line-height: 1.12; }
+    .condo-item span { display: block; color: #4c6583; font-size: 16px; margin-top: 3px; }
+    .condo-visual { background: linear-gradient(180deg, rgba(237, 247, 255, 0.4), rgba(203, 226, 244, 0.75)); display: flex; align-items: center; justify-content: center; padding: 32px; position: relative; }
+    .poster-frame { width: 100%; max-width: 540px; border-radius: 24px; background: white; padding: 10px; box-shadow: 0 26px 70px rgba(18, 60, 116, 0.24); border: 1px solid rgba(18, 60, 116, 0.12); }
+    .poster-frame img { width: 100%; height: auto; border-radius: 18px; object-fit: contain; }
+    .condo-proof { padding: 34px 52px 46px; background: #dceefa; border-top: 1px solid rgba(18, 60, 116, 0.12); }
+    .condo-proof h3 { color: #123c74; font-size: 34px; line-height: 1.08; margin-bottom: 20px; }
+    .profile-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .profile-card { background: rgba(255, 255, 255, 0.78); border: 1px solid rgba(18, 60, 116, 0.12); border-radius: 20px; padding: 22px; }
+    .profile-card h4 { color: #113d73; font-size: 21px; margin-bottom: 10px; }
+    .profile-card p { color: #456281; font-size: 16px; line-height: 1.55; }
+    .cta-band { margin-top: 22px; border-radius: 24px; padding: 28px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 20px; align-items: center; background: linear-gradient(135deg, #123c74, #0767d9); color: white; }
+    .cta-band h3 { font-size: 30px; margin-bottom: 6px; color: white; }
+    .cta-band p { color: #e4f4ff; font-size: 17px; }
+    .cta-band .btn { justify-self: end; background: #ffffff; color: #123c74; box-shadow: none; }
+
+    .contact-strip { margin: 58px 0 0; padding: 34px; display: grid; grid-template-columns: 0.9fr 1.1fr 0.8fr; gap: 28px; border-radius: 26px; border: 1px solid var(--line); background: rgba(5, 21, 44, 0.76); }
+    .contact-strip h2 { font-size: 32px; line-height: 1.12; margin-bottom: 8px; }
+    .contact-strip p, .contact-strip li { color: var(--muted); font-size: 16px; line-height: 1.55; }
+    .contact-strip ul { list-style: none; display: grid; gap: 8px; }
+    .footer { padding: 42px 0; color: var(--soft); font-size: 14px; border-top: 1px solid var(--line); margin-top: 60px; }
+    .footer-grid { display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+
+    @media (max-width: 1100px) {
+      .apps { grid-template-columns: repeat(3, 1fr); }
+      .hero-grid, .condo-hero, .confidence, .contact-strip { grid-template-columns: 1fr; }
+      .hero-panel { min-height: 420px; }
+      .condo-product { text-align: left; }
+      .condo-brand-row { align-items: flex-start; flex-direction: column; margin-bottom: 28px; }
+      .cta-band { grid-template-columns: 1fr; }
+      .cta-band .btn { justify-self: start; }
     }
-
-    .condo-brand-left { display: flex; align-items: center; gap: 12px; font-weight: 900; color: #173d73; font-size: 30px; }
-    .condo-icon { width: 54px; height: 54px; border-radius: 12px; display: grid; place-items: center; color: white; background: linear-gradient(135deg, #39a8ff, #0a3d8f); font-size: 28px; }
-    .condo-brand-product { text-align: right; }
-    .condo-brand-product strong { display: block; font-size: 42px; line-height: 1; color: #123a74; }
-    .condo-brand-product span { color: #435979; font-size: 19px; }
-
-    .condo-copy { position: relative; z-index: 2; max-width: 560px; }
-    .condo-copy h2 { font-size: clamp(40px, 5vw, 64px); line-height: 1.02; color: #153f78; letter-spacing: -1.7px; margin-bottom: 20px; }
-    .condo-copy p { color: #223d5f; font-size: clamp(21px, 2.2vw, 29px); line-height: 1.32; margin-bottom: 28px; }
-
-    .condo-actions { display: flex; flex-wrap: wrap; gap: 14px; }
-    .condo-btn-primary { background: linear-gradient(135deg, #0877ff, #073fbd); color: white; box-shadow: 0 18px 38px rgba(8,119,255,0.30); }
-    .condo-btn-secondary { background: rgba(255,255,255,0.78); color: #113764; border-color: rgba(17,55,100,0.18); }
-
-    .condo-feature-list { position: relative; z-index: 2; width: min(720px, 100%); margin-top: 64px; display: grid; gap: 18px; }
-    .condo-feature { display: grid; grid-template-columns: 38px 1fr; gap: 14px; align-items: start; }
-    .condo-feature span { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; color: white; background: #3c8e5c; font-weight: 900; }
-    .condo-feature strong { display: block; color: #183e72; font-size: 25px; line-height: 1.1; margin-bottom: 4px; }
-    .condo-feature small { display: block; color: #324d70; font-size: 18px; line-height: 1.35; }
-
-    .condo-bottom-strip { position: relative; z-index: 3; background: linear-gradient(135deg, #093b87, #092f6b); color: white; padding: 32px 54px; }
-    .condo-bottom-strip h3 { font-size: clamp(25px, 3vw, 37px); margin-bottom: 8px; }
-    .condo-bottom-strip p { color: #d9ebff; font-size: clamp(18px, 2vw, 25px); font-weight: 700; }
-
-    .condo-detail { padding: 42px 54px 54px; background: linear-gradient(180deg, #edf6ff, #dceeff); }
-    .condo-detail-title { text-align: center; margin-bottom: 34px; }
-    .condo-detail-title h2 { font-size: clamp(34px, 4vw, 50px); color: #123a74; line-height: 1.08; margin-bottom: 12px; }
-    .condo-detail-title p { color: #2e4c70; font-size: 20px; line-height: 1.42; max-width: 820px; margin: 0 auto; }
-
-    .condo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-bottom: 28px; }
-    .condo-info-card { min-height: 255px; padding: 26px; border-radius: 22px; background: rgba(255,255,255,0.82); border: 1px solid rgba(34, 87, 153, 0.14); box-shadow: 0 16px 36px rgba(40, 92, 160, 0.14); }
-    .condo-info-card h3 { color: #123a74; font-size: 25px; line-height: 1.15; margin-bottom: 12px; }
-    .condo-info-card p, .condo-info-card li { color: #385373; font-size: 17px; line-height: 1.55; }
-    .condo-info-card ul { padding-left: 20px; display: grid; gap: 8px; }
-
-    .pain-panel { margin: 30px 0; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 26px; align-items: stretch; }
-    .pain-card, .solution-card { padding: 30px; border-radius: 24px; border: 1px solid rgba(34, 87, 153, 0.16); box-shadow: 0 16px 36px rgba(40, 92, 160, 0.13); }
-    .pain-card { background: rgba(255, 255, 255, 0.86); }
-    .solution-card { background: linear-gradient(135deg, #103e7e, #071c3d); color: white; }
-    .pain-card h3, .solution-card h3 { font-size: 28px; line-height: 1.14; margin-bottom: 18px; }
-    .pain-card h3 { color: #123a74; }
-
-    .pain-list, .solution-list { list-style: none; display: grid; gap: 13px; }
-    .pain-list li, .solution-list li { display: grid; grid-template-columns: 24px 1fr; gap: 12px; align-items: start; font-size: 18px; line-height: 1.42; }
-    .pain-list li { color: #385373; }
-    .solution-list li { color: #d9ebff; }
-    .pain-list li::before { content: "!"; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; background: #ffe5e5; color: #bf2e2e; font-weight: 900; }
-    .solution-list li::before { content: "✓"; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; border: 1px solid rgba(72, 199, 255, 0.60); color: #9fe2ff; font-weight: 900; }
-
-    .profiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 28px; }
-    .profile-card { padding: 28px; border-radius: 24px; background: rgba(255,255,255,0.82); border: 1px solid rgba(34, 87, 153, 0.14); }
-    .profile-card h3 { color: #123a74; font-size: 26px; margin-bottom: 12px; }
-    .profile-card p { color: #385373; font-size: 18px; line-height: 1.5; }
-
-    .condo-closing { margin-top: 34px; padding: 34px; border-radius: 24px; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; background: linear-gradient(135deg, #0c3d83, #061935); color: white; box-shadow: 0 20px 44px rgba(9, 47, 107, 0.24); }
-    .condo-closing h3 { font-size: clamp(26px, 3vw, 40px); line-height: 1.12; margin-bottom: 8px; }
-    .condo-closing p { color: #d9ebff; font-size: 19px; line-height: 1.42; }
-
-    .contact-band { margin: 34px 0; padding: 30px; border-radius: var(--radius); display: grid; grid-template-columns: 190px 1fr auto; gap: 30px; align-items: center; border: 1px solid var(--line); background: rgba(5, 22, 45, 0.72); }
-    .mail-art { width: 150px; height: 110px; border-radius: 24px; display: grid; place-items: center; font-size: 64px; background: radial-gradient(circle, rgba(72,199,255,0.20), transparent 64%); border: 1px solid rgba(111, 190, 255, 0.18); }
-    .contact-band h2 { font-size: 32px; line-height: 1.12; margin-bottom: 8px; }
-    .contact-band p { color: var(--muted); font-size: 18px; }
-
-    .footer { display: grid; grid-template-columns: 1.1fr 1.2fr 0.9fr; gap: 40px; padding: 42px 0 30px; border-top: 1px solid var(--line); }
-    .footer h3 { font-size: 17px; margin-bottom: 14px; }
-    .footer p, .footer li { color: var(--muted); font-size: 15px; line-height: 1.6; }
-    .tech-list, .footer-contact { list-style: none; display: grid; gap: 10px; }
-    .tech-list { grid-template-columns: repeat(6, minmax(70px, 1fr)); text-align: center; gap: 14px; }
-    .tech-list li { padding: 12px 8px; border-radius: 14px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); }
-
-    .copyright { color: var(--soft); font-size: 14px; padding: 22px 0 38px; display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid rgba(111,190,255,0.14); }
-
-    @media (max-width: 1020px) {
-      .nav { align-items: flex-start; flex-direction: column; padding: 18px 0; }
-      .nav-links { width: 100%; overflow-x: auto; padding-bottom: 8px; }
-      .hero, .trust-panel, .pain-panel, .contact-band, .footer, .condo-closing { grid-template-columns: 1fr; }
-      .attribute-row { grid-template-columns: repeat(2, 1fr); }
-      .projects, .condo-grid, .profiles { grid-template-columns: repeat(2, 1fr); }
-      .hero-visual { min-height: 340px; }
-      .device { width: 78%; right: 32px; }
-    }
-
-    @media (max-width: 680px) {
-      .page, .nav { width: min(100% - 28px, var(--max)); }
-      .nav-links { gap: 18px; font-size: 13px; }
-      .brand-mark { width: 58px; height: 58px; font-size: 34px; }
-      .hero { padding-top: 36px; }
-      .hero h1 { font-size: 43px; }
-      .hero p { font-size: 21px; }
-      .button-row, .condo-actions { flex-direction: column; }
+    @media (max-width: 760px) {
+      .shell { width: min(100% - 26px, var(--max)); }
+      .nav { min-height: auto; padding: 14px 0; align-items: flex-start; }
+      .brand { min-width: auto; }
+      .brand-logo { width: 48px; height: 48px; }
+      .brand-name { font-size: 23px; }
+      .brand-sub { font-size: 12px; }
+      .menu { display: none; }
+      .nav .btn { display: none; }
+      .hero { padding: 42px 0 24px; }
+      .hero h1 { font-size: 46px; }
+      .lead { font-size: 20px; }
+      .hero-actions, .condo-actions { flex-direction: column; }
       .btn { width: 100%; }
-      .attribute-row, .projects, .condo-grid, .profiles { grid-template-columns: 1fr; }
-      .project-card { min-height: auto; }
-      .trust-panel, .contact-band, .condo-detail, .condo-bottom-strip, .condo-hero { padding: 28px; }
-      .condo-brand { align-items: flex-start; flex-direction: column; }
-      .condo-brand-product { text-align: left; }
-      .condo-feature-list { margin-top: 42px; }
-      .condo-feature strong { font-size: 21px; }
-      .condo-feature small { font-size: 16px; }
-      .copyright { flex-direction: column; }
-      .tech-list { grid-template-columns: repeat(2, 1fr); }
+      .trust-strip { grid-template-columns: 1fr; }
+      .hero-panel { min-height: 450px; padding: 20px; }
+      .proof-card { width: 160px; }
+      .proof-card.one { top: 38px; left: 28px; }
+      .proof-card.two { top: 105px; right: 25px; }
+      .proof-card.three { bottom: 42px; left: 26px; }
+      .proof-card.four { bottom: 34px; right: 24px; }
+      .apps { grid-template-columns: 1fr; }
+      .check-grid, .profile-grid { grid-template-columns: 1fr; }
+      .condo-card { border-radius: 24px; }
+      .condo-copy, .condo-proof { padding: 34px 24px; }
+      .condo-visual { padding: 20px; }
+      .condo-copy h2 { font-size: 43px; }
+      .condo-copy .condo-lead { font-size: 20px; }
+      .condo-item strong { font-size: 19px; }
+      .footer-grid { align-items: flex-start; flex-direction: column; }
     }
   </style>
 </head>
-
 <body>
   <header class="topbar">
-    <nav class="nav" aria-label="Navegación principal">
-      <a class="brand" href="#inicio" aria-label="Ir al inicio de JVSys">
-        <div class="brand-mark">JV</div>
-        <div class="brand-copy">
-          <strong>JVSys</strong>
-          <span>Desarrollo de Apps<br />Audit-Proof en plataforma SaaS</span>
+    <div class="shell nav">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">
+        <img class="brand-logo" src="Logo_JVsys.png" alt="Logo JVSys" />
+        <div>
+          <div class="brand-name">JVSys</div>
+          <div class="brand-sub">Desarrollo de Apps<br />Audit-Proof en plataforma SaaS</div>
         </div>
       </a>
-
-      <div class="nav-links" aria-label="Secciones">
+      <nav class="menu" aria-label="Menú principal">
         <a href="#inicio">Inicio</a>
         <a href="#soluciones">Soluciones</a>
         <a href="#proyectos">Proyectos</a>
         <a href="#tecnologia">Tecnología</a>
         <a href="#condo-admin">Condo Admin</a>
         <a href="#contacto">Contacto</a>
-      </div>
-
-      <a class="nav-cta" href="mailto:xve.montes@gmail.com?subject=Solicitud%20de%20informes%20JVSys">✉ Solicitar informes</a>
-    </nav>
+      </nav>
+      <a class="btn btn-primary" href="mailto:xve.montes@gmail.com?subject=Solicitud%20de%20informes%20JVSys">✉ Solicitar informes</a>
+    </div>
   </header>
-
-  <main>
-    <section class="page hero" id="inicio">
-      <div>
-        <h1>Desarrollamos Apps SaaS <span class="gradient-word">Audit-Proof</span></h1>
-        <p>Aplicaciones profesionales, seguras y trazables para administrar, operar y hacer crecer tu organización con confianza.</p>
-        <div class="button-row">
-          <a class="btn btn-primary" href="mailto:xve.montes@gmail.com?subject=Solicitud%20de%20informes%20JVSys">✉ Solicitar informes</a>
-          <a class="btn btn-outline" href="#proyectos">▷ Conocer proyectos</a>
-        </div>
-      </div>
-
-      <div class="hero-visual" aria-label="Visual tecnológico JVSys">
-        <div class="device"></div>
-        <div class="floating-card one"></div>
-        <div class="floating-card two"></div>
-        <div class="floating-card three"></div>
-      </div>
-    </section>
-
-    <section class="page attribute-row" id="soluciones" aria-label="Atributos de JVSys">
-      <article class="attribute"><div class="attribute-icon">◇</div><div><h3>Audit-Proof</h3><p>Cada acción importante es rastreable, verificable y comprobable.</p></div></article>
-      <article class="attribute"><div class="attribute-icon">🔒</div><div><h3>Seguridad</h3><p>Protegemos tus datos y la información de tu organización.</p></div></article>
-      <article class="attribute"><div class="attribute-icon">☁</div><div><h3>Plataforma SaaS</h3><p>Arquitectura moderna, escalable y lista para crecer.</p></div></article>
-      <article class="attribute"><div class="attribute-icon">↗</div><div><h3>Eficiencia</h3><p>Automatizamos procesos y generamos información útil para decidir mejor.</p></div></article>
-      <article class="attribute"><div class="attribute-icon">✓</div><div><h3>Confianza</h3><p>Sistemas estables, claros y hechos para durar.</p></div></article>
-    </section>
-
-    <section class="page trust-panel">
-      <div class="shield-art">🛡</div>
-      <div><h2>No solo desarrollamos software. <span>Construimos confianza y evidencia.</span></h2><p>En JVSys aplicamos un enfoque Audit-Proof: cada sistema registra quién hizo qué, cuándo, desde dónde y con qué evidencia.</p></div>
-      <ul class="check-list">
-        <li>Trazabilidad completa de operaciones</li>
-        <li>Control documental y generación de PDF</li>
-        <li>Roles, permisos y niveles de autorización</li>
-        <li>Tecnología moderna y buenas prácticas</li>
-        <li>Preparados para auditorías e inspecciones</li>
-      </ul>
-    </section>
-
-    <section class="page" id="proyectos">
-      <div class="section-title"><h2>Nuestras Aplicaciones y Proyectos</h2><p>Soluciones pensadas para necesidades reales.</p></div>
-      <div class="projects">
-        <article class="project-card"><div class="project-logo">🏠</div><h3>Condo Admin</h3><p>Plataforma SaaS para administración de fraccionamientos y condominios. Cobranza, estados de cuenta, control documental y trazabilidad audit-proof.</p><a href="#condo-admin">Más información</a></article>
-        <article class="project-card"><div class="project-logo">📈</div><h3>PENZIO</h3><p>Aplicación para planificación pensionaria Ley 1973. Cálculos, escenarios, reportes y acompañamiento digital para mejores decisiones.</p><a href="mailto:xve.montes@gmail.com?subject=Informes%20PENZIO">Más información</a></article>
-        <article class="project-card"><div class="project-logo">👨‍👩‍👧</div><h3>Pulungos CAI</h3><p>Sistema para control de acceso, asistencia, comunicación y administración operativa de estancia infantil.</p><a href="mailto:xve.montes@gmail.com?subject=Informes%20Pulungos%20CAI">Más información</a></article>
-        <article class="project-card"><div class="project-logo">₿</div><h3>BitMercado MX</h3><p>MVP para operaciones P2P de Bitcoin en México, con enfoque en reputación, seguridad y flujo controlado.</p><a href="mailto:xve.montes@gmail.com?subject=Informes%20BitMercado%20MX">Más información</a></article>
-        <article class="project-card"><div class="project-logo">911</div><h3>Mi911</h3><p>Plataforma de asistencia, alertas y registro de incidentes para una respuesta coordinada y efectiva.</p><a href="mailto:xve.montes@gmail.com?subject=Informes%20Mi911">Más información</a></article>
-        <article class="project-card"><div class="project-logo">📄</div><h3>Plataformas Documentales</h3><p>Emisión, recuperación, validación y trazabilidad de documentos PDF institucionales con firma y evidencia.</p><a href="mailto:xve.montes@gmail.com?subject=Informes%20Plataformas%20Documentales">Más información</a></article>
-      </div>
-    </section>
-
-    <section class="page condo-module" id="condo-admin" aria-label="Módulo comercial Condo Admin">
-      <div class="condo-hero">
-        <div class="condo-brand">
-          <div class="condo-brand-left"><span class="condo-icon">J</span><span>JVSys</span></div>
-          <div class="condo-brand-product"><strong>Condo Admin</strong><span>Administración Inteligente de Condominios</span></div>
-        </div>
-        <div class="condo-copy">
-          <h2>La nueva forma de administrar tu fraccionamiento</h2>
-          <p>Control total, transparencia financiera y decisiones inteligentes con evidencia real.</p>
-          <div class="condo-actions">
-            <a class="btn condo-btn-primary" href="mailto:xve.montes@gmail.com?subject=Quiero%20informes%20de%20Condo%20Admin">Solicitar presentación</a>
-            <a class="btn condo-btn-secondary" href="#condo-diagnostico">Ver beneficios</a>
+  <main id="inicio">
+    <section class="hero">
+      <div class="shell">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">SaaS · Evidencia · Control · Confianza</div>
+            <h1>Desarrollamos Apps SaaS <span class="accent">Audit-Proof</span></h1>
+            <p class="lead">Aplicaciones profesionales, seguras y trazables para administrar, operar y hacer crecer tu organización con información clara, evidencia confiable y procesos listos para auditoría.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="mailto:xve.montes@gmail.com?subject=Solicitud%20de%20informes%20JVSys">✉ Solicitar informes</a>
+              <a class="btn btn-ghost" href="#proyectos">▷ Conocer proyectos</a>
+              <a class="btn btn-ghost" href="#condo-admin">Condo Admin</a>
+            </div>
+          </div>
+          <div class="hero-panel" aria-label="Representación de plataforma audit-proof">
+            <div class="proof-card one"><strong>Cobranza</strong><span>Pagos, saldos y estados de cuenta con trazabilidad.</span></div>
+            <div class="proof-card two"><strong>Documentos</strong><span>Comprobantes, solicitudes y evidencia recuperable.</span></div>
+            <div class="proof-card three"><strong>Roles</strong><span>Accesos por perfil y operación controlada.</span></div>
+            <div class="proof-card four"><strong>Reportes</strong><span>Información clara para decidir y rendir cuentas.</span></div>
+            <div class="proof-core"><div class="proof-badge">✓</div></div>
           </div>
         </div>
-        <div class="condo-feature-list">
-          <article class="condo-feature"><span>✓</span><div><strong>Dashboard financiero inteligente</strong><small>Indicadores claros para entender cobranza, morosidad, ingresos y decisiones pendientes.</small></div></article>
-          <article class="condo-feature"><span>✓</span><div><strong>Cobranza con evidencia digital</strong><small>Comprobantes, historial y trazabilidad para reducir dudas y conflictos.</small></div></article>
-          <article class="condo-feature"><span>✓</span><div><strong>QR de autenticidad en comprobantes</strong><small>Validación documental para que cada pago y documento tenga respaldo verificable.</small></div></article>
-          <article class="condo-feature"><span>✓</span><div><strong>Bitácora completa del sistema</strong><small>Registro de acciones críticas para administración, auditoría y control interno.</small></div></article>
-          <article class="condo-feature"><span>✓</span><div><strong>Reportes y estados de cuenta automáticos</strong><small>Historial por casa, adeudos, pagos y documentos listos para revisión.</small></div></article>
+        <div class="trust-strip" id="soluciones">
+          <div class="trust-item"><div class="trust-icon">◇</div><div><strong>Audit-Proof</strong><span>Cada acción importante es rastreable, verificable y comprobable.</span></div></div>
+          <div class="trust-item"><div class="trust-icon">🔒</div><div><strong>Seguridad</strong><span>Protección de datos, roles y control de acceso.</span></div></div>
+          <div class="trust-item"><div class="trust-icon">☁</div><div><strong>Plataforma SaaS</strong><span>Arquitectura moderna, escalable y lista para crecer.</span></div></div>
+          <div class="trust-item"><div class="trust-icon">↗</div><div><strong>Eficiencia</strong><span>Automatización de procesos y reportes útiles.</span></div></div>
+          <div class="trust-item"><div class="trust-icon">✓</div><div><strong>Confianza</strong><span>Sistemas estables, claros y hechos para durar.</span></div></div>
         </div>
       </div>
-      <div class="condo-bottom-strip"><h3>Transparencia y control real para tu fraccionamiento</h3><p>Sistema diseñado para operar con claridad, confianza y resultados medibles.</p></div>
-      <div class="condo-detail" id="condo-diagnostico">
-        <div class="condo-detail-title"><h2>Condo Admin no vende “una app”: resuelve el desgaste diario de administrar.</h2><p>Cuando la administración depende de hojas sueltas, mensajes de WhatsApp, recibos dispersos y reportes manuales, cada aclaración se vuelve discusión. Condo Admin ordena la operación y convierte la administración en evidencia.</p></div>
-        <div class="condo-grid">
-          <article class="condo-info-card"><h3>Para administradores</h3><p>Reduce tiempo operativo, centraliza cobranza, genera estados de cuenta y conserva evidencia de cada proceso administrativo.</p></article>
-          <article class="condo-info-card"><h3>Para mesas directivas</h3><p>Permite revisar datos confiables, detectar morosidad, supervisar documentos y tomar decisiones con información verificable.</p></article>
-          <article class="condo-info-card"><h3>Para condóminos</h3><p>Da claridad sobre pagos, adeudos y comprobantes, evitando dudas y mejorando la percepción de transparencia.</p></article>
+    </section>
+    <section class="section" id="tecnologia">
+      <div class="shell">
+        <div class="confidence">
+          <div class="shield-box"><div class="shield">⌘</div></div>
+          <div class="confidence-text">
+            <div><h2>No solo desarrollamos software. <span class="accent">Construimos confianza y evidencia.</span></h2><p>En JVSys aplicamos un enfoque Audit-Proof: cada sistema debe explicar quién hizo qué, cuándo, desde dónde y con qué evidencia operativa.</p></div>
+            <div class="check-grid">
+              <div class="check">Trazabilidad completa de operaciones</div>
+              <div class="check">Control documental y generación de PDF</div>
+              <div class="check">Roles, permisos y niveles de autorización</div>
+              <div class="check">Tecnología moderna y buenas prácticas</div>
+              <div class="check">Preparados para auditorías e inspecciones</div>
+              <div class="check">Diseño SaaS multi-organización</div>
+            </div>
+          </div>
         </div>
-        <div class="pain-panel">
-          <article class="pain-card"><h3>Señales de que tu administración necesita Condo Admin</h3><ul class="pain-list"><li>No todos confían en los saldos o reportes.</li><li>Los comprobantes se pierden o dependen de búsquedas manuales.</li><li>La morosidad se revisa tarde o de forma incompleta.</li><li>Las aclaraciones consumen demasiado tiempo.</li><li>La información importante vive en hojas, chats o archivos separados.</li></ul></article>
-          <article class="solution-card"><h3>Lo que Condo Admin entrega</h3><ul class="solution-list"><li>Cobranza organizada por casa, periodo y evidencia.</li><li>Estados de cuenta claros para condóminos y administración.</li><li>Documentos recuperables y trazables.</li><li>Reportes ejecutivos para detectar riesgos y oportunidades.</li><li>Arquitectura SaaS multi-fraccionamiento, preparada para crecer sin mezclar datos.</li></ul></article>
-        </div>
-        <div class="profiles">
-          <article class="profile-card"><h3>Mensaje para quien administra</h3><p>Condo Admin te ayuda a dejar de perseguir información y empezar a operar con orden. Cada pago, cada documento y cada consulta debe tener respaldo claro.</p></article>
-          <article class="profile-card"><h3>Mensaje para quien paga</h3><p>Un condómino informado confía más. Cuando puede entender su estado de cuenta y validar sus comprobantes, disminuyen los conflictos.</p></article>
-        </div>
-        <div class="condo-closing"><div><h3>¿Quieres presentar Condo Admin a tu fraccionamiento?</h3><p>Solicita una explicación clara, humana y orientada a resultados. Te ayudamos a mostrar por qué la administración profesional necesita evidencia, no improvisación.</p></div><a class="btn btn-primary" href="mailto:xve.montes@gmail.com?subject=Presentaci%C3%B3n%20Condo%20Admin%20para%20fraccionamiento">Solicitar informes</a></div>
       </div>
     </section>
-
-    <section class="page contact-band" id="contacto">
-      <div class="mail-art">✉</div>
-      <div><h2>¿Tienes un proyecto en mente?</h2><p>Hablemos y encontremos la mejor solución para ti. Cuéntanos tus necesidades y enviaremos una propuesta sin compromiso.</p></div>
-      <a class="btn btn-primary" href="mailto:xve.montes@gmail.com?subject=Solicitud%20de%20informes%20JVSys">Solicitar informes</a>
+    <section class="section" id="proyectos">
+      <div class="shell">
+        <div class="section-title"><h2>Nuestras Aplicaciones y Proyectos</h2><p>Soluciones pensadas para necesidades reales.</p></div>
+        <div class="apps">
+          <article class="app-card"><div><div class="app-icon"><img src="Logo_Fracc.jpeg" alt="Logo Condo Admin" /></div><h3>Condo Admin</h3><p>Plataforma SaaS para administración de fraccionamientos y condominios. Cobranza, estados de cuenta, control documental y trazabilidad audit-proof.</p></div><a class="mini-btn" href="#condo-admin">Abrir módulo</a></article>
+          <article class="app-card"><div><div class="app-icon">P</div><h3>PENZIO</h3><p>Aplicación para planificación pensionaria Ley 1973. Cálculos, escenarios, reportes y acompañamiento digital.</p></div><a class="mini-btn" href="#contacto">Más información</a></article>
+          <article class="app-card"><div><div class="app-icon">👨‍👩‍👧</div><h3>Pulungos CAI</h3><p>Sistema para control de acceso, asistencia, comunicación y administración operativa de estancia infantil.</p></div><a class="mini-btn" href="#contacto">Más información</a></article>
+          <article class="app-card"><div><div class="app-icon">₿</div><h3>BitMercado MX</h3><p>MVP para operaciones P2P de Bitcoin en México con enfoque en reputación, seguridad y flujo controlado.</p></div><a class="mini-btn" href="#contacto">Más información</a></article>
+          <article class="app-card"><div><div class="app-icon">911</div><h3>Mi911</h3><p>Plataforma de asistencia, alertas y registro de incidentes para una respuesta coordinada y efectiva.</p></div><a class="mini-btn" href="#contacto">Más información</a></article>
+          <article class="app-card"><div><div class="app-icon">📄</div><h3>Plataformas Documentales</h3><p>Emisión, recuperación, validación y trazabilidad de documentos PDF institucionales con firma y evidencia.</p></div><a class="mini-btn" href="#contacto">Más información</a></article>
+        </div>
+      </div>
     </section>
-
-    <footer class="page footer" id="tecnologia">
-      <div><a class="brand" href="#inicio"><div class="brand-mark">JV</div><div class="brand-copy"><strong>JVSys</strong><span>Tecnología seria para procesos que no pueden fallar.</span></div></a></div>
-      <div><h3>Tecnologías con las que trabajamos</h3><ul class="tech-list"><li>Flutter</li><li>Python</li><li>Supabase</li><li>Flet</li><li>Railway</li><li>Vercel</li></ul></div>
-      <div><h3>Contacto</h3><ul class="footer-contact"><li>✉ xve.montes@gmail.com</li><li>✉ xvm.designs@gmail.com</li><li>📍 México</li></ul></div>
-    </footer>
-
-    <div class="page copyright"><span>© 2026 JVSys. Todos los derechos reservados.</span><span>Aviso de privacidad · Términos y condiciones</span></div>
+    <section class="condo-module" id="condo-admin">
+      <div class="shell">
+        <div class="condo-card">
+          <div class="condo-hero">
+            <div class="condo-copy">
+              <div class="condo-brand-row">
+                <div class="condo-brand"><img src="Logo_JVsys.png" alt="Logo JVSys" /><span>JVSys</span></div>
+                <div class="condo-product"><strong>Condo Admin</strong><span>Administración Inteligente de Condominios</span></div>
+              </div>
+              <h2>La nueva forma de administrar tu fraccionamiento</h2>
+              <p class="condo-lead">Control total, transparencia financiera y decisiones inteligentes con evidencia real. Menos discusiones, menos hojas sueltas y más claridad para todos.</p>
+              <div class="condo-actions">
+                <a class="btn btn-primary" href="mailto:xve.montes@gmail.com?subject=Solicito%20presentaci%C3%B3n%20de%20Condo%20Admin">Solicitar presentación</a>
+                <a class="btn btn-ghost" href="#beneficios-condo">Ver beneficios</a>
+              </div>
+              <div class="condo-list" id="beneficios-condo">
+                <div class="condo-item"><div class="mark">✓</div><div><strong>Dashboard financiero inteligente</strong><span>Indicadores claros para entender cobranza, morosidad, ingresos y decisiones.</span></div></div>
+                <div class="condo-item"><div class="mark">✓</div><div><strong>Cobranza con sello digital</strong><span>Comprobantes con evidencia, control administrativo y recuperación documental.</span></div></div>
+                <div class="condo-item"><div class="mark">✓</div><div><strong>QR de autenticidad en comprobantes</strong><span>Pagos verificables y comprobantes consultables cuando el administrador lo requiera.</span></div></div>
+                <div class="condo-item"><div class="mark">✓</div><div><strong>Bitácora completa del sistema</strong><span>Cada acción importante queda registrada para fortalecer confianza y transparencia.</span></div></div>
+                <div class="condo-item"><div class="mark">✓</div><div><strong>Reportes y estados de cuenta automáticos</strong><span>Historial completo por casa, adeudos vencidos, pagos y documentos relacionados.</span></div></div>
+              </div>
+            </div>
+            <div class="condo-visual"><div class="poster-frame"><img src="condo-admin-promo.png" alt="Promocional Condo Admin para administración inteligente de condominios" /></div></div>
+          </div>
+          <div class="condo-proof">
+            <h3>Diseñado para quien necesita ordenar, cobrar, comprobar y rendir cuentas.</h3>
+            <div class="profile-grid">
+              <article class="profile-card"><h4>Administradores</h4><p>Centraliza cobranza, reportes, documentos, comprobantes y seguimiento de solicitudes sin depender de archivos dispersos.</p></article>
+              <article class="profile-card"><h4>Mesas directivas</h4><p>Obtén claridad financiera, evidencia de pagos y reportes confiables para reducir dudas y transparentar decisiones.</p></article>
+              <article class="profile-card"><h4>Desarrolladores y fraccionamientos</h4><p>Profesionaliza la operación desde el inicio con una plataforma SaaS preparada para crecer por comunidad.</p></article>
+            </div>
+            <div class="cta-band"><div><h3>Transparencia y control real para tu fraccionamiento</h3><p>Sistema operando con enfoque audit-proof, pensado para administración seria y resultados verificables.</p></div><a class="btn" href="mailto:xve.montes@gmail.com?subject=Quiero%20conocer%20Condo%20Admin">Quiero conocer Condo Admin</a></div>
+          </div>
+        </div>
+        <div class="contact-strip" id="contacto">
+          <div><h2>¿Tienes un proyecto en mente?</h2><p>Hablemos y encontremos la mejor solución para tu operación.</p></div>
+          <div><ul><li>✉ xve.montes@gmail.com</li><li>✉ xvm.designs@gmail.com</li><li>📍 Ciudad de México, MX</li></ul></div>
+          <a class="btn btn-primary" href="mailto:xve.montes@gmail.com?subject=Solicitud%20de%20informes%20JVSys">Solicitar informes</a>
+        </div>
+      </div>
+    </section>
   </main>
+  <footer class="footer"><div class="shell footer-grid"><div>© 2026 JVSys. Todos los derechos reservados.</div><div>Desarrollo de Apps SaaS · Audit-Proof · Tecnología seria para procesos que no pueden fallar.</div></div></footer>
 </body>
 </html>
-<!-- FIN DE ARCHIVO: index.html v2.1.0 -->
+<!-- FIN DE ARCHIVO: index.html v2.2.0 -->
