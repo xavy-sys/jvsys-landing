@@ -1,6 +1,6 @@
 <!--
 ARCHIVO: index.html
-VERSIÓN: v2.5.0
+VERSIÓN: v2.5.1
 FECHA: 2026-05-05
 PROYECTO: JVSys Landing + Captura Profesional de Leads + Portal Condo Admin
 AUTOR: JVSys / Team Osito
@@ -11,7 +11,7 @@ módulo comercial Condo Admin, formulario profesional conectado a Supabase
 para capturar prospectos comerciales y acceso institucional para usuarios activos
 de Condo Admin.
 
-CAMBIO PRINCIPAL v2.5.0:
+CAMBIO PRINCIPAL v2.5.1:
 - Se conserva la landing completa v2.4.0, no versión simplificada.
 - Se agrega bloque visual premium "Portal seguro Condo Admin".
 - Se integra explicación corta, clara y comercial de SaaS Audit-Proof.
@@ -22,26 +22,34 @@ CAMBIO PRINCIPAL v2.5.0:
 - NO se usa service_role_key en frontend.
 - Se conserva la imagen actual del repositorio: mockup-condo-admin-saas.jpg.
 - Se conserva navegación interna al módulo comercial Condo Admin.
+- Se agrega favicon profesional JVSys para sustituir el ícono genérico del navegador.
+- Se integra favicon multi-dispositivo: favicon.ico, favicon-16x16.png, favicon-32x32.png y apple-touch-icon.png.
+- Se agrega meta theme-color para reforzar identidad visual SaaS en navegadores móviles.
 
 VERSIÓN ANTERIOR:
-index.html v2.4.0
+index.html v2.5.0
 TOTAL DE LÍNEAS VERSIÓN ANTERIOR:
-- v2.4.0 real recibido por el usuario: 652 líneas
+- v2.5.0 real recibido por el usuario: 757 líneas
 
 VERSIÓN NUEVA:
-index.html v2.5.0
-TOTAL DE LÍNEAS VERSIÓN NUEVA: 757
+index.html v2.5.1
+TOTAL DE LÍNEAS VERSIÓN NUEVA: 772
 
 ARCHIVOS REQUERIDOS EN REPOSITORIO:
 - Logo_JVsys.png
 - Logo_Fracc.jpeg
 - mockup-condo-admin-saas.jpg
+- favicon.ico
+- favicon-16x16.png
+- favicon-32x32.png
+- apple-touch-icon.png
 
 SEGURIDAD:
 - La anon key puede vivir en frontend si las políticas RLS están correctamente configuradas.
 - La service_role_key NUNCA debe ir en index.html ni en repositorios públicos.
 - Si una service_role_key fue expuesta, debe rotarse desde Supabase.
 - La URL técnica de Railway no se muestra como texto al usuario final; queda detrás del botón institucional.
+- El favicon no usa rutas externas; debe vivir en la raíz del repositorio junto a index.html.
 
 INSTRUCCIÓN:
 Reemplazar COMPLETAMENTE el index.html actual.
@@ -57,6 +65,13 @@ FIN DE DOCUMENTACIÓN INTERNA
 
   <title>JVSys | Desarrollo de Apps SaaS Audit-Proof</title>
   <meta name="description" content="JVSys desarrolla plataformas SaaS Audit-Proof para administración, cobranza, documentos, reportes y operación confiable. Condo Admin ayuda a administrar fraccionamientos con transparencia financiera y evidencia real." />
+
+  <!-- FAVICON JVSys: identidad visual en pestañas del navegador y dispositivos móviles -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <meta name="theme-color" content="#020814" />
 
   <style>
     :root {
@@ -749,9 +764,9 @@ FIN DE DOCUMENTACIÓN INTERNA
 ============================================================
 FIN DEL ARCHIVO
 ARCHIVO: index.html
-VERSIÓN: v2.5.0
+VERSIÓN: v2.5.1
 FECHA: 2026-05-05
-TOTAL DE LÍNEAS: 757
+TOTAL DE LÍNEAS: 772
 INSTRUCCIÓN FINAL: Reemplazar COMPLETAMENTE el index.html actual.
 ============================================================
 -->
