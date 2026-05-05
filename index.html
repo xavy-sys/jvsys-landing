@@ -1,6 +1,6 @@
 <!--
 ARCHIVO: index.html
-VERSIÓN: v2.5.2
+VERSIÓN: v2.5.3
 FECHA: 2026-05-05
 PROYECTO: JVSys Landing + Captura Profesional de Leads + Portal Condo Admin + NidoSys
 AUTOR: JVSys / Team Osito
@@ -11,25 +11,25 @@ módulo comercial Condo Admin, formulario profesional conectado a Supabase
 para capturar prospectos comerciales y acceso institucional para usuarios activos
 de Condo Admin.
 
-CAMBIO PRINCIPAL v2.5.2:
-- Se conserva la landing completa v2.5.1, sin simplificar estructura ni funcionalidad.
-- Se actualiza el nombre comercial del proyecto infantil: Pulungos CAI cambia a NidoSys.
-- Se ajusta la tarjeta de proyectos para presentar NidoSys como sistema SaaS para estancias infantiles.
-- Se actualiza el selector del formulario comercial para registrar interés en NidoSys.
-- Se integra el archivo requerido Logo_NidoSys.png para usar la nueva identidad visual del producto.
+CAMBIO PRINCIPAL v2.5.3:
+- Se conserva la landing completa v2.5.2, sin simplificar estructura ni funcionalidad.
+- Se corrige visualmente la tarjeta de NidoSys para mostrar correctamente el logotipo completo.
+- Se evita el recorte circular del logo NidoSys aplicando una clase específica con object-fit: contain.
+- Se agrega contenedor visual rectangular premium para logos con texto integrado.
+- Se conserva el nombre NidoSys en proyectos y formulario comercial.
 - Se conserva Condo Admin, portal de acceso, formulario real de leads y favicon JVSys.
 - Se mantiene exclusivamente SUPABASE_ANON_KEY pública.
 - NO se usa service_role_key en frontend.
 - Se deja preparada la landing para la siguiente etapa estratégica: INV-CORE / módulo Mercado Pago estándar JVSys.
 
 VERSIÓN ANTERIOR:
-index.html v2.5.1
+index.html v2.5.2
 TOTAL DE LÍNEAS VERSIÓN ANTERIOR:
-- v2.5.1 real recibido por el usuario: 772 líneas
+- v2.5.2 real regenerado: 769 líneas
 
 VERSIÓN NUEVA:
-index.html v2.5.2
-TOTAL DE LÍNEAS VERSIÓN NUEVA: 769
+index.html v2.5.3
+TOTAL DE LÍNEAS VERSIÓN NUEVA: 775
 
 ARCHIVOS REQUERIDOS EN REPOSITORIO:
 - Logo_JVsys.png
@@ -242,6 +242,12 @@ FIN DE DOCUMENTACIÓN INTERNA
       display: grid; place-items: center; font-size: 44px; font-weight: 900; margin: 0 auto 14px; overflow: hidden;
     }
     .app-icon img { width: 100%; height: 100%; object-fit: cover; }
+    .app-icon-logo {
+      width: 112px; height: 92px; border-radius: 22px; padding: 8px;
+      background: #ffffff; border: 1px solid rgba(141, 213, 255, 0.34);
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.16);
+    }
+    .app-icon-logo img { width: 100%; height: 100%; object-fit: contain; border-radius: 14px; }
     .app-card h3 { font-size: 19px; margin-bottom: 10px; }
     .app-card p { color: var(--muted); font-size: 14px; line-height: 1.55; margin-bottom: 16px; }
     .mini-btn {
@@ -573,7 +579,7 @@ FIN DE DOCUMENTACIÓN INTERNA
         <div class="apps">
           <article class="app-card"><div><div class="app-icon"><img src="Logo_Fracc.jpeg" alt="Logo Condo Admin" /></div><h3>Condo Admin</h3><p>Plataforma SaaS para administración de fraccionamientos y condominios. Cobranza, estados de cuenta, control documental y trazabilidad audit-proof.</p></div><a class="mini-btn" href="#condo-admin">Abrir módulo</a></article>
           <article class="app-card"><div><div class="app-icon">P</div><h3>PENZIO</h3><p>Aplicación para planificación pensionaria Ley 1973. Cálculos, escenarios, reportes y acompañamiento digital.</p></div><a class="mini-btn" href="#lead-form-section">Más información</a></article>
-          <article class="app-card"><div><div class="app-icon"><img src="Logo_NidoSys.png" alt="Logo NidoSys" /></div><h3>NidoSys</h3><p>Sistema SaaS para control de acceso, seguridad infantil, operación y administración de estancias infantiles con trazabilidad audit-proof.</p></div><a class="mini-btn" href="#lead-form-section">Más información</a></article>
+          <article class="app-card"><div><div class="app-icon app-icon-logo"><img src="Logo_NidoSys.png" alt="Logo NidoSys" /></div><h3>NidoSys</h3><p>Sistema SaaS para control de acceso, seguridad infantil, operación y administración de estancias infantiles con trazabilidad audit-proof.</p></div><a class="mini-btn" href="#lead-form-section">Más información</a></article>
           <article class="app-card"><div><div class="app-icon">₿</div><h3>BitMercado MX</h3><p>MVP para operaciones P2P de Bitcoin en México con enfoque en reputación, seguridad y flujo controlado.</p></div><a class="mini-btn" href="#lead-form-section">Más información</a></article>
           <article class="app-card"><div><div class="app-icon">911</div><h3>Mi911</h3><p>Plataforma de asistencia, alertas y registro de incidentes para una respuesta coordinada y efectiva.</p></div><a class="mini-btn" href="#lead-form-section">Más información</a></article>
           <article class="app-card"><div><div class="app-icon">📄</div><h3>Plataformas Documentales</h3><p>Emisión, recuperación, validación y trazabilidad de documentos PDF institucionales con firma y evidencia.</p></div><a class="mini-btn" href="#lead-form-section">Más información</a></article>
@@ -761,9 +767,9 @@ FIN DE DOCUMENTACIÓN INTERNA
 ============================================================
 FIN DEL ARCHIVO
 ARCHIVO: index.html
-VERSIÓN: v2.5.2
+VERSIÓN: v2.5.3
 FECHA: 2026-05-05
-TOTAL DE LÍNEAS: 769
+TOTAL DE LÍNEAS: 775
 INSTRUCCIÓN FINAL: Reemplazar COMPLETAMENTE el index.html actual.
 ============================================================
 -->
