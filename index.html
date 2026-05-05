@@ -1,35 +1,36 @@
 <!--
 ARCHIVO: index.html
-VERSIÓN: v2.4.0
-FECHA: 2026-04-28
-PROYECTO: JVSys Landing + Captura Profesional de Leads
+VERSIÓN: v2.5.0
+FECHA: 2026-05-05
+PROYECTO: JVSys Landing + Captura Profesional de Leads + Portal Condo Admin
 AUTOR: JVSys / Team Osito
 
 DESCRIPCIÓN:
 Landing oficial JVSys con diseño SaaS Audit-Proof, navegación funcional,
-módulo comercial Condo Admin y formulario profesional conectado a Supabase
-para capturar prospectos comerciales.
+módulo comercial Condo Admin, formulario profesional conectado a Supabase
+para capturar prospectos comerciales y acceso institucional para usuarios activos
+de Condo Admin.
 
-CAMBIO PRINCIPAL v2.4.0:
-- Se restaura la landing completa, no versión simplificada.
-- Se integra formulario real de leads conectado a Supabase REST API.
-- Se usa exclusivamente SUPABASE_ANON_KEY pública.
+CAMBIO PRINCIPAL v2.5.0:
+- Se conserva la landing completa v2.4.0, no versión simplificada.
+- Se agrega bloque visual premium "Portal seguro Condo Admin".
+- Se integra explicación corta, clara y comercial de SaaS Audit-Proof.
+- Se agrega botón profesional de acceso para usuarios activos de Condo Admin.
+- Se oculta visualmente la infraestructura Railway mediante copy institucional.
+- Se mantiene el formulario real de leads conectado a Supabase REST API.
+- Se mantiene exclusivamente SUPABASE_ANON_KEY pública.
 - NO se usa service_role_key en frontend.
-- Se corrige SUPABASE_KEY en una sola línea válida.
-- Se corrige tipo_cliente con valores compatibles con constraint SQL.
-- Se agrega manejo humano de estados: enviando, éxito, error y validación.
-- Se mantiene el botón Condo Admin como navegación al módulo interno #condo-admin.
 - Se conserva la imagen actual del repositorio: mockup-condo-admin-saas.jpg.
+- Se conserva navegación interna al módulo comercial Condo Admin.
 
 VERSIÓN ANTERIOR:
-index.html v2.3.1 funcional / index.html v2.0.0 simplificado de prueba
+index.html v2.4.0
 TOTAL DE LÍNEAS VERSIÓN ANTERIOR:
-- v2.3.1 funcional: 612 líneas
-- v2.0.0 simplificado: marcado como 356, pero no confiable por reemplazo manual
+- v2.4.0 real recibido por el usuario: 652 líneas
 
 VERSIÓN NUEVA:
-index.html v2.4.0
-TOTAL DE LÍNEAS VERSIÓN NUEVA: 654
+index.html v2.5.0
+TOTAL DE LÍNEAS VERSIÓN NUEVA: 757
 
 ARCHIVOS REQUERIDOS EN REPOSITORIO:
 - Logo_JVsys.png
@@ -40,6 +41,7 @@ SEGURIDAD:
 - La anon key puede vivir en frontend si las políticas RLS están correctamente configuradas.
 - La service_role_key NUNCA debe ir en index.html ni en repositorios públicos.
 - Si una service_role_key fue expuesta, debe rotarse desde Supabase.
+- La URL técnica de Railway no se muestra como texto al usuario final; queda detrás del botón institucional.
 
 INSTRUCCIÓN:
 Reemplazar COMPLETAMENTE el index.html actual.
@@ -235,6 +237,52 @@ FIN DE DOCUMENTACIÓN INTERNA
       border: 1px solid rgba(141, 213, 255, 0.35); border-radius: 10px; color: var(--cyan); font-weight: 800; font-size: 13px;
     }
 
+
+
+    .client-portal-section { padding: 58px 0 28px; }
+    .client-portal-card {
+      position: relative; overflow: hidden; border-radius: var(--radius-xl); border: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 12% 10%, rgba(139, 220, 255, 0.18), transparent 34%),
+        radial-gradient(circle at 86% 8%, rgba(7, 135, 255, 0.22), transparent 34%),
+        linear-gradient(135deg, rgba(5, 21, 44, 0.92), rgba(8, 34, 66, 0.82));
+      box-shadow: var(--shadow); padding: 34px;
+    }
+    .client-portal-card::after {
+      content: ""; position: absolute; inset: auto -90px -120px auto; width: 320px; height: 320px;
+      border-radius: 50%; background: rgba(57, 197, 255, 0.10); filter: blur(6px); pointer-events: none;
+    }
+    .client-portal-layout {
+      position: relative; z-index: 1; display: grid; grid-template-columns: 1.02fr 0.98fr;
+      gap: 30px; align-items: center;
+    }
+    .portal-badge {
+      display: inline-flex; align-items: center; gap: 8px; min-height: 36px; padding: 0 14px;
+      border-radius: 999px; background: rgba(139, 220, 255, 0.10); border: 1px solid rgba(139, 220, 255, 0.28);
+      color: var(--cyan); font-size: 13px; font-weight: 900; letter-spacing: 1.6px; text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .client-portal-copy h2 { font-size: clamp(32px, 4vw, 52px); line-height: 1.05; letter-spacing: -1.4px; margin-bottom: 16px; }
+    .client-portal-copy p { color: var(--muted); font-size: 19px; line-height: 1.5; max-width: 650px; }
+    .portal-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 26px; }
+    .btn-portal {
+      background: linear-gradient(135deg, #39c5ff, #0767d9); color: #ffffff;
+      box-shadow: 0 18px 38px rgba(57, 197, 255, 0.28);
+    }
+    .portal-note { margin-top: 14px; color: var(--soft); font-size: 14px; }
+    .audit-explain-box {
+      display: grid; gap: 14px; padding: 24px; border-radius: 24px;
+      background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(141, 213, 255, 0.22);
+    }
+    .audit-explain-box h3 { color: #ffffff; font-size: 25px; line-height: 1.12; }
+    .audit-explain-box p { color: var(--muted); font-size: 16px; line-height: 1.55; }
+    .audit-mini-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 4px; }
+    .audit-mini-item {
+      min-height: 86px; padding: 16px; border-radius: 18px; background: rgba(2, 8, 20, 0.42);
+      border: 1px solid rgba(141, 213, 255, 0.16); color: #eaf5ff; font-size: 15px; line-height: 1.38;
+    }
+    .audit-mini-item strong { display: block; color: var(--cyan); margin-bottom: 6px; font-size: 15px; }
+
     .condo-module { padding: 76px 0; background: radial-gradient(circle at 90% 30%, rgba(57, 197, 255, 0.12), transparent 28%); }
     .condo-card {
       background: #edf7ff; color: #123762; border-radius: 34px; overflow: hidden;
@@ -331,7 +379,7 @@ FIN DE DOCUMENTACIÓN INTERNA
 
     @media (max-width: 1100px) {
       .apps { grid-template-columns: repeat(3, 1fr); }
-      .hero-grid, .proof-section, .condo-hero, .lead-card, .contact-strip { grid-template-columns: 1fr; }
+      .hero-grid, .proof-section, .client-portal-layout, .condo-hero, .lead-card, .contact-strip { grid-template-columns: 1fr; }
       .condo-product { text-align: left; }
       .condo-brand-row { align-items: flex-start; flex-direction: column; margin-bottom: 28px; }
       .cta-band { grid-template-columns: 1fr; }
@@ -352,8 +400,8 @@ FIN DE DOCUMENTACIÓN INTERNA
       .lead { font-size: 20px; }
       .hero-actions, .condo-actions, .form-actions { flex-direction: column; align-items: stretch; }
       .btn { width: 100%; }
-      .trust-strip, .metric-row, .apps, .profile-grid, .form-grid { grid-template-columns: 1fr; }
-      .proof-section, .lead-card { padding: 22px; }
+      .trust-strip, .metric-row, .apps, .profile-grid, .form-grid, .audit-mini-grid { grid-template-columns: 1fr; }
+      .proof-section, .client-portal-card, .lead-card { padding: 22px; }
       .lead-form { padding: 20px; }
       .condo-card { border-radius: 24px; }
       .condo-copy, .condo-proof { padding: 34px 24px; }
@@ -383,6 +431,7 @@ FIN DE DOCUMENTACIÓN INTERNA
         <a href="#proyectos">Proyectos</a>
         <a href="#tecnologia">Tecnología</a>
         <a href="#condo-admin">Condo Admin</a>
+        <a href="https://web-production-d14f76.up.railway.app/" target="_blank" rel="noopener noreferrer">Acceso clientes</a>
         <a href="#lead-form-section">Contacto</a>
       </nav>
 
@@ -453,6 +502,50 @@ FIN DE DOCUMENTACIÓN INTERNA
 
           <div class="proof-image">
             <img src="mockup-condo-admin-saas.jpg" alt="Visual comercial de dashboard Condo Admin" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="client-portal-section" id="portal-condo-admin">
+      <div class="shell">
+        <div class="client-portal-card">
+          <div class="client-portal-layout">
+            <div class="client-portal-copy">
+              <div class="portal-badge">🔐 Portal seguro para clientes JVSys</div>
+              <h2>Acceso para usuarios de <span class="accent">Condo Admin</span></h2>
+              <p>
+                Si ya eres usuario activo de Condo Admin, ingresa desde este portal institucional.
+                El acceso se abre en una ventana segura para continuar con la operación de tu fraccionamiento,
+                cobranza, comprobantes, estados de cuenta y administración diaria.
+              </p>
+
+              <div class="portal-actions">
+                <a class="btn btn-portal" href="https://web-production-d14f76.up.railway.app/" target="_blank" rel="noopener noreferrer">
+                  Acceso Condo Admin
+                </a>
+                <a class="btn btn-ghost" href="#condo-admin">Conocer beneficios</a>
+              </div>
+
+              <div class="portal-note">
+                La infraestructura técnica permanece oculta para conservar una experiencia profesional, clara y confiable para el usuario final.
+              </div>
+            </div>
+
+            <div class="audit-explain-box">
+              <h3>¿Qué es un sistema SaaS Audit-Proof?</h3>
+              <p>
+                Un sistema SaaS funciona en la nube: no requiere instalaciones complicadas y puede consultarse desde distintos dispositivos.
+                Audit-Proof significa que las acciones importantes quedan registradas, trazadas y comprobables.
+              </p>
+
+              <div class="audit-mini-grid">
+                <div class="audit-mini-item"><strong>Quién</strong>Identifica qué usuario realizó una acción relevante.</div>
+                <div class="audit-mini-item"><strong>Cuándo</strong>Registra fecha y momento operativo del movimiento.</div>
+                <div class="audit-mini-item"><strong>Qué cambió</strong>Conserva evidencia de pagos, documentos y procesos.</div>
+                <div class="audit-mini-item"><strong>Por qué importa</strong>Reduce errores, conflictos y riesgos administrativos.</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -651,4 +744,14 @@ FIN DE DOCUMENTACIÓN INTERNA
   </script>
 </body>
 </html>
-<!-- FIN DE ARCHIVO: index.html v2.4.0 -->
+
+<!--
+============================================================
+FIN DEL ARCHIVO
+ARCHIVO: index.html
+VERSIÓN: v2.5.0
+FECHA: 2026-05-05
+TOTAL DE LÍNEAS: 757
+INSTRUCCIÓN FINAL: Reemplazar COMPLETAMENTE el index.html actual.
+============================================================
+-->
