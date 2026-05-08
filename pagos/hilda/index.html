@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <!--
 ===============================================================================
-Archivo: tarjeta_bancaria_virtual_hilda_v1_0_0.html
+Archivo: tarjeta_bancaria_virtual_hilda_v1_1_0.html
 Fecha: 2026-05-07
 Elaborado por: JVSys
 Descripción:
-  Tarjeta bancaria virtual animada para compartir datos de pago de dos cuentas:
+  Tarjeta bancaria virtual animada para compartir datos de pago de dos cuentas, con botón real de WhatsApp:
   Santander y BBVA. Archivo autónomo: no requiere servidor para visualizarse.
-  Puede subirse posteriormente a Vercel, Netlify o dominio propio.
-Versión: v1.0.0
-Total de líneas: 701
+  Publicada para compartirse por liga corta, WhatsApp, QR o dominio propio.
+Versión: v1.1.0
+Total de líneas: 724
 ===============================================================================
 -->
 <html lang="es-MX">
@@ -17,7 +17,12 @@ Total de líneas: 701
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Datos Bancarios | Hilda del Carmen Solano Pimentel</title>
-  <meta name="description" content="Tarjeta bancaria virtual con datos para transferencia Santander y BBVA." />
+  <meta name="description" content="Tarjeta bancaria virtual con opciones de pago Santander y BBVA." />
+  <meta property="og:title" content="Datos Bancarios | Hilda" />
+  <meta property="og:description" content="Opciones de pago por transferencia: Santander y BBVA." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://jvsys-landing.vercel.app/pagos/hilda/" />
+  <meta name="theme-color" content="#ff3f93" />
   <style>
     :root {
       --azul: #004481;
@@ -410,6 +415,25 @@ Total de líneas: 701
       background: linear-gradient(135deg, #10a85c, #35c97d);
     }
 
+    .whatsapp-action {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .whatsapp-action::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.32), transparent);
+      transform: translateX(-120%);
+      animation: whatsappSweep 3.8s infinite ease-in-out;
+    }
+
+    @keyframes whatsappSweep {
+      0%, 55% { transform: translateX(-120%); }
+      85%, 100% { transform: translateX(120%); }
+    }
+
     .toast {
       position: fixed;
       left: 50%;
@@ -505,6 +529,7 @@ Total de líneas: 701
         <div class="badge">🔐 Datos bancarios seguros</div>
         <h1>Opciones de pago</h1>
         <p class="subtitle">Elige Santander o BBVA. Los datos principales permanecen al centro para copiar y transferir con facilidad.</p>
+        <p class="subtitle" style="font-size:14px;margin-top:7px;">Liga directa: jvsys-landing.vercel.app/pagos/hilda</p>
 
         <div class="tabs" role="tablist" aria-label="Seleccionar banco">
           <button class="tab active santander" onclick="showBank('santander')" id="tab-santander">Santander</button>
@@ -562,7 +587,7 @@ Total de líneas: 701
 
         <div class="actions">
           <button class="action pink" onclick="copyText('Santander\nTitular: HILDA DEL CARMEN SOLANO PIMENTEL\nTarjeta: 5579 0701 6593 5928\nCLABE: 014650605749927748\nCuenta: 60574992774')">Copiar Santander</button>
-          <button class="action green" onclick="shareBank('Santander')">Compartir</button>
+          <button class="action green whatsapp-action" onclick="shareBank('Santander')">📲 Compartir por WhatsApp</button>
           <button class="action" onclick="window.print()">Guardar PDF</button>
         </div>
       </article>
@@ -627,7 +652,7 @@ Total de líneas: 701
 
         <div class="actions">
           <button class="action pink" onclick="copyText('BBVA\nTitular: HILDA DEL CARMEN SOLANO PIMENTEL\nCuenta: 1586976898\nCLABE: 012650015869768987\nSWIFT: BCMRMXMMPYM')">Copiar BBVA</button>
-          <button class="action green" onclick="shareBank('BBVA')">Compartir</button>
+          <button class="action green whatsapp-action" onclick="shareBank('BBVA')">📲 Compartir por WhatsApp</button>
           <button class="action" onclick="window.print()">Guardar PDF</button>
         </div>
       </article>
@@ -674,21 +699,15 @@ Total de líneas: 701
       setTimeout(() => toast.classList.remove("show"), 1800);
     }
 
-    async function shareBank(bank) {
-      const text = bankTexts[bank];
-      if (navigator.share) {
-        try {
-          await navigator.share({
-            title: "Datos bancarios " + bank,
-            text: text,
-            url: window.location.href
-          });
-        } catch (e) {
-          copyText(text);
-        }
-      } else {
-        copyText(text);
-      }
+    function shareBank(bank) {
+      const publicUrl = "https://jvsys-landing.vercel.app/pagos/hilda/";
+      const text = "Hola ✨ Te comparto la tarjeta bancaria virtual de Hilda.\n\n" +
+        "Puedes elegir Santander o BBVA y copiar los datos de pago aquí:\n" +
+        publicUrl + "\n\n" +
+        "Banco sugerido en pantalla: " + bank;
+      const whatsappUrl = "https://wa.me/?text=" + encodeURIComponent(text);
+      window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+      showToast("Abriendo WhatsApp 📲");
     }
   </script>
 </body>
@@ -697,9 +716,9 @@ Total de líneas: 701
 <!--
 ===============================================================================
 FIN DEL ARCHIVO
-Archivo: tarjeta_bancaria_virtual_hilda_v1_0_0.html
-Versión: v1.0.0
+Archivo: tarjeta_bancaria_virtual_hilda_v1_1_0.html
+Versión: v1.1.0
 Fecha: 2026-05-07
-Total de líneas: 701
+Total de líneas: 724
 ===============================================================================
 -->
