@@ -1,6 +1,6 @@
 <!--
 ARCHIVO: index.html
-VERSIÓN: v2.7.0
+VERSIÓN: v2.7.2
 FECHA: 2026-05-12
 PROYECTO: JVSys Landing + Captura Profesional de Leads + Portal Condo Admin + NidoSys + JVSysBillingCore
 AUTOR: JVSys / Team Osito
@@ -11,11 +11,20 @@ módulo comercial Condo Admin, módulo corporativo JVSysBillingCore,
 formulario profesional conectado a Supabase para capturar prospectos comerciales
 y acceso institucional para usuarios activos de Condo Admin.
 
-CAMBIO PRINCIPAL v2.7.0:
-- Se integra el nuevo módulo corporativo JVSysBillingCore dentro del HomePage JVSys.com.mx.
+CAMBIO PRINCIPAL v2.7.2:
+- Se corrige lenguaje técnico visible para hacerlo más humano, claro y comercial.
+- Se reemplaza terminología técnica de arquitectura por Multi-Empresa / varias empresas sin mezclar información.
+- Se conserva el concepto arquitectónico SaaS sin exponer terminología técnica innecesaria al usuario final.
+- Se refuerza confianza, claridad y accesibilidad para visitantes no técnicos.
+
+CAMBIO PRINCIPAL v2.7.1:
+- Se corrige la experiencia profesional de botones y llamadas a la acción del módulo JVSysBillingCore.
+- Los CTA comerciales ahora dirigen al formulario y preseleccionan el interés correspondiente.
+- Se agrega cierre comercial dentro del módulo JVSysBillingCore con acciones claras.
+- Se conserva la integración completa del nuevo módulo corporativo JVSysBillingCore dentro del HomePage JVSys.com.mx.
 - Se posiciona JVSysBillingCore como infraestructura financiera SaaS Audit-Proof para empresas modernas.
 - Se agregan secciones comerciales de arquitectura Audit-Proof, control fiscal inteligente, multi-moneda,
-  billing core profesional, operación multi-tenant y dashboards ejecutivos.
+  billing core profesional, operación multi-empresa y dashboards ejecutivos.
 - Se incorpora estética fintech premium azul profundo + dorado para continuidad con INVICTA.
 - Se agregan referencias visuales a Logo_JVSysBillingCore.png y mockup-jvsysbillingcore.jpg.
 - Se agrega navegación directa al módulo JVSysBillingCore.
@@ -34,14 +43,13 @@ CAMBIO PRINCIPAL v2.6.0:
 - Se conserva toda la estructura original de la landing sin romper módulos funcionales.
 
 VERSIÓN ANTERIOR:
-index.html v2.6.0
+index.html v2.7.1
 TOTAL DE LÍNEAS VERSIÓN ANTERIOR:
-- v2.6.0 real recibido: 784 líneas
-- v2.6.0 documentación interna declaraba: 781 líneas
+- v2.7.1 generada: 1188 líneas
 
 VERSIÓN NUEVA:
-index.html v2.7.0
-TOTAL DE LÍNEAS VERSIÓN NUEVA: 1145
+index.html v2.7.2
+TOTAL DE LÍNEAS VERSIÓN NUEVA: 1193
 
 ARCHIVOS REQUERIDOS EN REPOSITORIO:
 - Logo_JVsys.png
@@ -685,7 +693,9 @@ FIN DE DOCUMENTACIÓN INTERNA
       .btn { width: 100%; }
       .trust-strip, .metric-row, .apps, .profile-grid, .form-grid, .audit-mini-grid, .billing-features, .billing-core-quick, .billing-ideal-grid { grid-template-columns: 1fr; }
       .proof-section, .client-portal-card, .lead-card { padding: 22px; }
-      .billing-core-hero, .billing-core-feature-band, .billing-strategy-grid { padding: 24px; }
+      .billing-core-hero, .billing-core-feature-band, .billing-strategy-grid, .billing-commercial-cta { padding: 24px; }
+      .billing-commercial-cta { margin: 22px 22px 28px; grid-template-columns: 1fr; }
+      .billing-commercial-actions { justify-content: flex-start; }
       .billing-core-card { border-radius: 24px; }
       .lead-form { padding: 20px; }
       .condo-card { border-radius: 24px; }
@@ -774,15 +784,15 @@ FIN DE DOCUMENTACIÓN INTERNA
               </p>
 
               <div class="billing-core-actions">
-                <a class="btn btn-gold" href="#lead-form-section">Conocer JVSysBillingCore</a>
-                <a class="btn btn-ghost" href="#lead-form-section">Solicitar demo</a>
+                <a class="btn btn-gold js-lead-cta" href="#lead-form-section" data-interest="JVSysBillingCore" data-message="Deseo conocer JVSysBillingCore como infraestructura financiera SaaS Audit-Proof para mi empresa.">Conocer JVSysBillingCore</a>
+                <a class="btn btn-ghost js-lead-cta" href="#lead-form-section" data-interest="JVSysBillingCore" data-message="Deseo solicitar una demo de JVSysBillingCore para evaluar cobranza, conciliación, multi-moneda y dashboards ejecutivos.">Solicitar demo</a>
               </div>
 
               <div class="billing-core-quick">
                 <div class="billing-pill"><strong>Audit-Proof</strong><span>Trazabilidad financiera y evidencia operativa.</span></div>
                 <div class="billing-pill"><strong>Multi-Moneda</strong><span>MXN, USD y expansión futura multi-divisa.</span></div>
                 <div class="billing-pill"><strong>Billing Core</strong><span>Cobranza, suscripciones y conciliaciones.</span></div>
-                <div class="billing-pill"><strong>Multi-Tenant</strong><span>Múltiples empresas sin mezclar información.</span></div>
+                <div class="billing-pill"><strong>Multi-Empresa</strong><span>Varias empresas o unidades sin mezclar información.</span></div>
               </div>
             </div>
 
@@ -854,6 +864,20 @@ FIN DE DOCUMENTACIÓN INTERNA
                 <div class="billing-ideal-item">🔁 Membresías y suscripciones</div>
                 <div class="billing-ideal-item">🌐 Clientes internacionales</div>
               </div>
+            </div>
+          </div>
+
+          <div class="billing-commercial-cta">
+            <div>
+              <h3>Tecnología financiera para operar con <span class="gold-accent">control real.</span></h3>
+              <p>
+                Convierte cobranza, conciliación, evidencia documental y reportes financieros en un flujo empresarial claro,
+                trazable y preparado para crecimiento SaaS.
+              </p>
+            </div>
+            <div class="billing-commercial-actions">
+              <a class="btn btn-gold js-lead-cta" href="#lead-form-section" data-interest="JVSysBillingCore" data-message="Deseo implementar JVSysBillingCore como core financiero para cobranza, conciliación y control operativo.">Solicitar implementación</a>
+              <a class="btn btn-ghost js-lead-cta" href="#lead-form-section" data-interest="JVSysBillingCore" data-message="Quiero agendar una revisión comercial de JVSysBillingCore para mi operación financiera.">Agendar revisión</a>
             </div>
           </div>
         </div>
@@ -947,12 +971,12 @@ FIN DE DOCUMENTACIÓN INTERNA
 
         <div class="apps">
           <article class="app-card"><div><div class="app-icon"><img src="Logo_Fracc.jpeg" alt="Logo Condo Admin" /></div><h3>Condo Admin</h3><p>Plataforma SaaS para administración de fraccionamientos y condominios. Cobranza, estados de cuenta, control documental y trazabilidad audit-proof.</p></div><a class="mini-btn" href="#condo-admin">Abrir módulo</a></article>
-          <article class="app-card"><div><div class="app-icon">P</div><h3>PENZIO</h3><p>Aplicación para planificación pensionaria Ley 1973. Cálculos, escenarios, reportes y acompañamiento digital.</p></div><a class="mini-btn" href="#lead-form-section">Más información</a></article>
-          <article class="app-card"><div><div class="app-icon app-icon-logo"><img src="Logo_NidoSys.png" alt="Logo NidoSys" /></div><h3>NidoSys</h3><p>Sistema SaaS para control de acceso, seguridad infantil, operación y administración de estancias infantiles con trazabilidad audit-proof.</p></div><a class="mini-btn" href="#lead-form-section">Más información</a></article>
-          <article class="app-card"><div><div class="app-icon app-icon-logo"><img src="Logo_JVSysBillingCore.png" alt="Logo JVSysBillingCore" /></div><h3>JVSysBillingCore</h3><p>Infraestructura financiera SaaS Audit-Proof para cobranza, conciliación, multi-moneda, control fiscal, suscripciones y operación empresarial escalable.</p></div><a class="mini-btn" href="#jvsysbillingcore">Abrir módulo</a></article>
-          <article class="app-card"><div><div class="app-icon app-icon-logo"><img src="Logo_Invicta.png" alt="Logo INVICTA" /></div><h3>INVICTA</h3><p>Plataforma inteligente de inversión y simulación financiera. Estrategias, portafolios, educación financiera y crecimiento patrimonial con enfoque moderno, seguro y escalable.</p></div><a class="mini-btn" href="#lead-form-section">Más información</a></article>
-          <article class="app-card"><div><div class="app-icon">911</div><h3>Mi911</h3><p>Plataforma de asistencia, alertas y registro de incidentes para una respuesta coordinada y efectiva.</p></div><a class="mini-btn" href="#lead-form-section">Más información</a></article>
-          <article class="app-card"><div><div class="app-icon">📄</div><h3>Plataformas Documentales</h3><p>Emisión, recuperación, validación y trazabilidad de documentos PDF institucionales con firma y evidencia.</p></div><a class="mini-btn" href="#lead-form-section">Más información</a></article>
+          <article class="app-card"><div><div class="app-icon">P</div><h3>PENZIO</h3><p>Aplicación para planificación pensionaria Ley 1973. Cálculos, escenarios, reportes y acompañamiento digital.</p></div><a class="mini-btn js-lead-cta" href="#lead-form-section" data-interest="PENZIO" data-message="Deseo más información sobre PENZIO.">Más información</a></article>
+          <article class="app-card"><div><div class="app-icon app-icon-logo"><img src="Logo_NidoSys.png" alt="Logo NidoSys" /></div><h3>NidoSys</h3><p>Sistema SaaS para control de acceso, seguridad infantil, operación y administración de estancias infantiles con trazabilidad audit-proof.</p></div><a class="mini-btn js-lead-cta" href="#lead-form-section" data-interest="NidoSys" data-message="Deseo más información sobre NidoSys.">Más información</a></article>
+          <article class="app-card"><div><div class="app-icon app-icon-logo"><img src="Logo_JVSysBillingCore.png" alt="Logo JVSysBillingCore" /></div><h3>JVSysBillingCore</h3><p>Infraestructura financiera SaaS Audit-Proof para cobranza, conciliación, multi-moneda, control fiscal, suscripciones y operación empresarial escalable.</p></div><a class="mini-btn js-lead-cta" href="#lead-form-section" data-interest="JVSysBillingCore" data-message="Deseo información comercial de JVSysBillingCore para mi empresa.">Solicitar información</a></article>
+          <article class="app-card"><div><div class="app-icon app-icon-logo"><img src="Logo_Invicta.png" alt="Logo INVICTA" /></div><h3>INVICTA</h3><p>Plataforma inteligente de inversión y simulación financiera. Estrategias, portafolios, educación financiera y crecimiento patrimonial con enfoque moderno, seguro y escalable.</p></div><a class="mini-btn js-lead-cta" href="#lead-form-section" data-interest="INVICTA" data-message="Deseo más información sobre INVICTA.">Más información</a></article>
+          <article class="app-card"><div><div class="app-icon">911</div><h3>Mi911</h3><p>Plataforma de asistencia, alertas y registro de incidentes para una respuesta coordinada y efectiva.</p></div><a class="mini-btn js-lead-cta" href="#lead-form-section" data-interest="Mi911" data-message="Deseo más información sobre Mi911.">Más información</a></article>
+          <article class="app-card"><div><div class="app-icon">📄</div><h3>Plataformas Documentales</h3><p>Emisión, recuperación, validación y trazabilidad de documentos PDF institucionales con firma y evidencia.</p></div><a class="mini-btn js-lead-cta" href="#lead-form-section" data-interest="Plataforma documental" data-message="Deseo más información sobre plataformas documentales JVSys.">Más información</a></article>
         </div>
       </div>
     </section>
@@ -1026,7 +1050,7 @@ FIN DE DOCUMENTACIÓN INTERNA
               <div class="form-field"><label for="email">Correo electrónico *</label><input type="email" id="email" name="email" placeholder="correo@dominio.com" required /></div>
               <div class="form-field"><label for="telefono">Teléfono</label><input type="tel" id="telefono" name="telefono" placeholder="10 dígitos o WhatsApp" /></div>
               <div class="form-field"><label for="tipo_cliente">Tipo de cliente *</label><select id="tipo_cliente" name="tipo_cliente" required><option value="">Selecciona una opción</option><option value="Administrador">Administrador</option><option value="Mesa directiva">Mesa directiva</option><option value="Desarrollador">Desarrollador</option><option value="Fraccionamiento">Fraccionamiento</option><option value="Otro">Otro</option></select></div>
-              <div class="form-field full"><label for="interes">Interés principal *</label><select id="interes" name="interes" required><option value="Condo Admin">Condo Admin</option><option value="JVSysBillingCore">JVSysBillingCore</option><option value="Desarrollo App SaaS">Desarrollo App SaaS</option><option value="PENZIO">PENZIO</option><option value="NidoSys">NidoSys</option><option value="Plataforma documental">Plataforma documental</option><option value="Otro proyecto">Otro proyecto</option></select></div>
+              <div class="form-field full"><label for="interes">Interés principal *</label><select id="interes" name="interes" required><option value="Condo Admin">Condo Admin</option><option value="JVSysBillingCore">JVSysBillingCore</option><option value="Desarrollo App SaaS">Desarrollo App SaaS</option><option value="PENZIO">PENZIO</option><option value="NidoSys">NidoSys</option><option value="INVICTA">INVICTA</option><option value="Mi911">Mi911</option><option value="Plataforma documental">Plataforma documental</option><option value="Otro proyecto">Otro proyecto</option></select></div>
               <div class="form-field full"><label for="mensaje">Mensaje *</label><textarea id="mensaje" name="mensaje" placeholder="Describe brevemente qué necesitas, qué problema quieres resolver o qué tipo de sistema buscas." required></textarea></div>
             </div>
 
@@ -1070,6 +1094,30 @@ FIN DE DOCUMENTACIÓN INTERNA
       const element = document.getElementById(id);
       return element ? element.value.trim() : "";
     }
+
+    function setLeadIntent(interest, message) {
+      const interestElement = document.getElementById("interes");
+      const messageElement = document.getElementById("mensaje");
+
+      if (interestElement && interest) {
+        const optionExists = Array.from(interestElement.options).some(function(option) {
+          return option.value === interest;
+        });
+        if (optionExists) {
+          interestElement.value = interest;
+        }
+      }
+
+      if (messageElement && message && !messageElement.value.trim()) {
+        messageElement.value = message;
+      }
+    }
+
+    document.querySelectorAll(".js-lead-cta").forEach(function(link) {
+      link.addEventListener("click", function() {
+        setLeadIntent(link.dataset.interest, link.dataset.message);
+      });
+    });
 
     leadForm.addEventListener("submit", async function(event) {
       event.preventDefault();
@@ -1137,9 +1185,9 @@ FIN DE DOCUMENTACIÓN INTERNA
 ============================================================
 FIN DEL ARCHIVO
 ARCHIVO: index.html
-VERSIÓN: v2.7.0
+VERSIÓN: v2.7.2
 FECHA: 2026-05-12
-TOTAL DE LÍNEAS: 1145
+TOTAL DE LÍNEAS: 1193
 INSTRUCCIÓN FINAL: Reemplazar COMPLETAMENTE el index.html actual.
 ============================================================
 -->
