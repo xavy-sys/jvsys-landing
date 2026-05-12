@@ -1,6 +1,6 @@
 <!--
 ARCHIVO: index.html
-VERSIÓN: v2.7.2
+VERSIÓN: v2.7.3
 FECHA: 2026-05-12
 PROYECTO: JVSys Landing + Captura Profesional de Leads + Portal Condo Admin + NidoSys + JVSysBillingCore
 AUTOR: JVSys / Team Osito
@@ -10,6 +10,13 @@ Landing oficial JVSys con diseño SaaS Audit-Proof, navegación funcional,
 módulo comercial Condo Admin, módulo corporativo JVSysBillingCore,
 formulario profesional conectado a Supabase para capturar prospectos comerciales
 y acceso institucional para usuarios activos de Condo Admin.
+
+CAMBIO PRINCIPAL v2.7.3:
+- Se corrige profesionalmente la línea de tarjetas de beneficios de JVSysBillingCore.
+- Las tarjetas de Arquitectura Audit-Proof, Control Fiscal Inteligente, Multi-Moneda Empresarial, Billing Core Profesional y Dashboards Ejecutivos ahora son llamadas a la acción funcionales.
+- Cada tarjeta dirige al formulario comercial y prellena el interés/mensaje correspondiente.
+- Se agrega microcopy visible: “Solicitar información →” para evitar elementos aparentemente inactivos.
+- Se mantiene lenguaje humano y comercial, evitando terminología técnica innecesaria como Multi-Tenant.
 
 CAMBIO PRINCIPAL v2.7.2:
 - Se corrige lenguaje técnico visible para hacerlo más humano, claro y comercial.
@@ -48,8 +55,8 @@ TOTAL DE LÍNEAS VERSIÓN ANTERIOR:
 - v2.7.1 generada: 1188 líneas
 
 VERSIÓN NUEVA:
-index.html v2.7.2
-TOTAL DE LÍNEAS VERSIÓN NUEVA: 1193
+index.html v2.7.3
+TOTAL DE LÍNEAS VERSIÓN NUEVA: 1223
 
 ARCHIVOS REQUERIDOS EN REPOSITORIO:
 - Logo_JVsys.png
@@ -423,13 +430,19 @@ FIN DE DOCUMENTACIÓN INTERNA
       gap: 16px;
     }
     .billing-feature {
-      min-height: 205px;
+      min-height: 226px;
       padding: 22px 18px;
       text-align: center;
       border-radius: 22px;
       border: 1px solid rgba(217, 164, 65, 0.22);
       background: linear-gradient(180deg, rgba(10, 39, 74, 0.62), rgba(4, 17, 36, 0.78));
       transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
     }
     .billing-feature:hover {
       transform: translateY(-4px);
@@ -458,6 +471,17 @@ FIN DE DOCUMENTACIÓN INTERNA
       color: var(--muted);
       font-size: 14px;
       line-height: 1.48;
+    }
+    .billing-feature-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: auto;
+      padding-top: 14px;
+      color: var(--gold-2);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.2px;
     }
     .billing-strategy-grid {
       position: relative;
@@ -809,31 +833,36 @@ FIN DE DOCUMENTACIÓN INTERNA
             </p>
 
             <div class="billing-features">
-              <article class="billing-feature">
+              <a class="billing-feature js-lead-cta" href="#lead-form-section" data-interest="JVSysBillingCore" data-message="Deseo conocer la arquitectura Audit-Proof de JVSysBillingCore para registrar, validar y comprobar movimientos financieros.">
                 <div class="billing-feature-icon">◇</div>
                 <h4>Arquitectura Audit-Proof</h4>
                 <p>Cada movimiento queda registrado, validado, documentado y trazable.</p>
-              </article>
-              <article class="billing-feature">
+                <span class="billing-feature-cta">Solicitar información →</span>
+              </a>
+              <a class="billing-feature js-lead-cta" href="#lead-form-section" data-interest="JVSysBillingCore" data-message="Deseo conocer cómo JVSysBillingCore ayuda al control fiscal, evidencia digital, bitácoras e historial financiero.">
                 <div class="billing-feature-icon">▣</div>
                 <h4>Control Fiscal Inteligente</h4>
                 <p>Evidencia digital, bitácoras, historial financiero y seguimiento documental.</p>
-              </article>
-              <article class="billing-feature">
+                <span class="billing-feature-cta">Solicitar información →</span>
+              </a>
+              <a class="billing-feature js-lead-cta" href="#lead-form-section" data-interest="JVSysBillingCore" data-message="Deseo conocer la operación multi-moneda de JVSysBillingCore para MXN, USD y expansión internacional.">
                 <div class="billing-feature-icon">$</div>
                 <h4>Multi-Moneda Empresarial</h4>
                 <p>Opera en MXN, USD y monedas futuras para expansión internacional.</p>
-              </article>
-              <article class="billing-feature">
+                <span class="billing-feature-cta">Solicitar información →</span>
+              </a>
+              <a class="billing-feature js-lead-cta" href="#lead-form-section" data-interest="JVSysBillingCore" data-message="Deseo conocer el Billing Core Profesional para automatizar cobranza, facturación, suscripciones, recargos y conciliaciones.">
                 <div class="billing-feature-icon">↻</div>
                 <h4>Billing Core Profesional</h4>
                 <p>Automatiza cobranza, facturación, suscripciones, recargos y conciliaciones.</p>
-              </article>
-              <article class="billing-feature">
+                <span class="billing-feature-cta">Solicitar información →</span>
+              </a>
+              <a class="billing-feature js-lead-cta" href="#lead-form-section" data-interest="JVSysBillingCore" data-message="Deseo conocer los dashboards ejecutivos de JVSysBillingCore para visibilidad de ingresos, morosidad y comportamiento financiero.">
                 <div class="billing-feature-icon">▥</div>
                 <h4>Dashboards Ejecutivos</h4>
                 <p>Visibilidad en tiempo real de ingresos, morosidad y comportamiento financiero.</p>
-              </article>
+                <span class="billing-feature-cta">Solicitar información →</span>
+              </a>
             </div>
           </div>
 
@@ -1185,9 +1214,9 @@ FIN DE DOCUMENTACIÓN INTERNA
 ============================================================
 FIN DEL ARCHIVO
 ARCHIVO: index.html
-VERSIÓN: v2.7.2
+VERSIÓN: v2.7.3
 FECHA: 2026-05-12
-TOTAL DE LÍNEAS: 1193
+TOTAL DE LÍNEAS: 1223
 INSTRUCCIÓN FINAL: Reemplazar COMPLETAMENTE el index.html actual.
 ============================================================
 -->
