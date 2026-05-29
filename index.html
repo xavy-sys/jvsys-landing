@@ -1,6 +1,8 @@
 <!--
 ARCHIVO: index.html
-VERSIÓN: v3.0.0
+RUTA SUGERIDA: /index.html
+VERSIÓN ANTERIOR: v3.0.0
+VERSIÓN NUEVA: v3.1.0
 FECHA: 2026-05-28
 PROYECTO: JVSys Home Corporativo / Ecosistema SaaS / Condo Admin Beta / NexoPay Powered by JVSys
 ELABORADO POR: JVSys / Team Osito
@@ -11,16 +13,20 @@ Funciona como HUB empresarial de JVSys, con Condo Admin como plataforma disponib
 y NexoPay como infraestructura financiera en desarrollo avanzado al 70%.
 
 MOTIVO DE VERSIÓN:
-- Cierre de reingeniería comercial del Home JVSys.
-- Se elimina cualquier referencia visible a JVSysBillingCore.
-- NexoPay sustituye comercialmente al módulo financiero público.
-- Se mantienen colores corporativos: azul profundo degradado, azul corporativo #26619C, oro y blanco suave.
-- No se utiliza color verde.
-- Se usan logos reales como archivos independientes.
-- Se mejora contraste de logos mediante placas visuales.
+- Evolución de JVSys Home v3.0.0 hacia JVSys Digital Intelligence Layer v1.0.
+- Se integra Google Tag Manager con el contenedor GTM-PWMV6MD7.
+- Se prepara la propiedad GA4 asociada al ID de medición G-QBD8T6EHV6 para operar desde GTM.
+- Se agrega base audit-proof para eventos comerciales sin alterar diseño, colores, fuentes ni contenido visual.
+- Se agregan atributos data-jvsys-event y data-jvsys-product en enlaces comerciales críticos.
+- Se agrega dataLayer seguro para medir clics de WhatsApp, Condo Admin, NexoPay y Portal Clientes.
+- No se modifica identidad visual.
+- No se cambian colores corporativos.
+- No se cambian fuentes corporativas.
+- No se rediseña el Home.
+- No se elimina ningún componente del Home v3.0.0.
 - Se mantiene WhatsApp como canal escrito principal: 2221144015.
 - Se mantiene Portal Condo Admin: https://web-production-d14f76.up.railway.app/
-- Se prepara arquitectura para landings futuras: /condoadmin y /nexopay.
+- Se conserva preparación estratégica para landings futuras: /condoadmin y /nexopay.
 - Pendiente estratégico futuro: versión /en/ con traducción profesional propia.
 
 ARCHIVOS REQUERIDOS:
@@ -40,6 +46,18 @@ INSTRUCCIÓN:
 Reemplazar COMPLETAMENTE el index.html actual.
 Subir también los archivos nuevos de imagen incluidos en este paquete.
 No aplicar parches parciales.
+
+CAPA DE INTELIGENCIA DIGITAL:
+- GTM Container ID: GTM-PWMV6MD7
+- GA4 Measurement ID asociado: G-QBD8T6EHV6
+- Estrategia: Google Tag Manager como orquestador principal.
+- Eventos comerciales preparados:
+  - click_whatsapp_general
+  - click_whatsapp_condoadmin
+  - click_whatsapp_nexopay
+  - click_condoadmin_section
+  - click_nexopay_section
+  - click_portal_clientes
 
 INICIO DE ARCHIVO
 -->
@@ -566,9 +584,31 @@ INICIO DE ARCHIVO
       .whatsapp-float { left: 13px; right: 13px; bottom: 14px; }
     }
   </style>
+  <!-- Google Tag Manager | JVSys Digital Intelligence Layer v1.0 | GTM-PWMV6MD7 -->
+  <script>
+    (function(w,d,s,l,i){
+      w[l]=w[l]||[];
+      w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),
+          dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;
+      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+      f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PWMV6MD7');
+  </script>
+  <!-- End Google Tag Manager -->
+
 </head>
 
 <body>
+  <!-- Google Tag Manager (noscript) | JVSys Digital Intelligence Layer v1.0 -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWMV6MD7"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <header class="topbar">
     <div class="shell nav">
       <a class="brand" href="#inicio">
@@ -589,8 +629,8 @@ INICIO DE ARCHIVO
       </nav>
 
       <div class="nav-actions">
-        <a class="btn btn-ghost" href="https://web-production-d14f76.up.railway.app/" target="_blank" rel="noopener noreferrer">Portal Clientes</a>
-        <a class="btn btn-gold" href="https://wa.me/522221144015?text=Hola%20JVSys.%0A%0AMe%20interesa%20recibir%20informaci%C3%B3n%20sobre%3A%0A%E2%96%A1%20Condo%20Admin%0A%E2%96%A1%20NexoPay%0A%E2%96%A1%20Otra%20soluci%C3%B3n%0A%0AGracias." target="_blank" rel="noopener noreferrer">Solicitar información</a>
+        <a class="btn btn-ghost" href="https://web-production-d14f76.up.railway.app/" target="_blank" rel="noopener noreferrer" data-jvsys-event="click_portal_clientes" data-jvsys-product="condoadmin" data-jvsys-location="topbar">Portal Clientes</a>
+        <a class="btn btn-gold" href="https://wa.me/522221144015?text=Hola%20JVSys.%0A%0AMe%20interesa%20recibir%20informaci%C3%B3n%20sobre%3A%0A%E2%96%A1%20Condo%20Admin%0A%E2%96%A1%20NexoPay%0A%E2%96%A1%20Otra%20soluci%C3%B3n%0A%0AGracias." target="_blank" rel="noopener noreferrer" data-jvsys-event="click_whatsapp_general" data-jvsys-product="general" data-jvsys-location="topbar">Solicitar información</a>
       </div>
     </div>
   </header>
@@ -607,9 +647,9 @@ INICIO DE ARCHIVO
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-gold" href="https://wa.me/522221144015?text=Hola%20JVSys.%0A%0AMe%20interesa%20recibir%20informaci%C3%B3n%20sobre%3A%0A%E2%96%A1%20Condo%20Admin%0A%E2%96%A1%20NexoPay%0A%0AGracias." target="_blank" rel="noopener noreferrer">Solicitar información</a>
-            <a class="btn btn-blue" href="#condoadmin">Ver Condo Admin</a>
-            <a class="btn btn-ghost" href="#nexopay">Descubrir NexoPay</a>
+            <a class="btn btn-gold" href="https://wa.me/522221144015?text=Hola%20JVSys.%0A%0AMe%20interesa%20recibir%20informaci%C3%B3n%20sobre%3A%0A%E2%96%A1%20Condo%20Admin%0A%E2%96%A1%20NexoPay%0A%0AGracias." target="_blank" rel="noopener noreferrer" data-jvsys-event="click_whatsapp_general" data-jvsys-product="general" data-jvsys-location="hero">Solicitar información</a>
+            <a class="btn btn-blue" href="#condoadmin" data-jvsys-event="click_condoadmin_section" data-jvsys-product="condoadmin" data-jvsys-location="hero">Ver Condo Admin</a>
+            <a class="btn btn-ghost" href="#nexopay" data-jvsys-event="click_nexopay_section" data-jvsys-product="nexopay" data-jvsys-location="hero">Descubrir NexoPay</a>
           </div>
 
           <div class="microcopy">
@@ -647,7 +687,7 @@ INICIO DE ARCHIVO
                 <li>Reportes</li>
               </ul>
             </div>
-            <a class="btn btn-blue" href="https://web-production-d14f76.up.railway.app/" target="_blank" rel="noopener noreferrer">Ir a Condo Admin</a>
+            <a class="btn btn-blue" href="https://web-production-d14f76.up.railway.app/" target="_blank" rel="noopener noreferrer" data-jvsys-event="click_portal_clientes" data-jvsys-product="condoadmin" data-jvsys-location="platform_card">Ir a Condo Admin</a>
           </article>
 
           <article class="card featured">
@@ -663,7 +703,7 @@ INICIO DE ARCHIVO
                 <li>Reportes financieros</li>
               </ul>
             </div>
-            <a class="btn btn-gold" href="#nexopay">Descubrir NexoPay</a>
+            <a class="btn btn-gold" href="#nexopay" data-jvsys-event="click_nexopay_section" data-jvsys-product="nexopay" data-jvsys-location="platform_card">Descubrir NexoPay</a>
           </article>
 
           <article class="card">
@@ -736,8 +776,8 @@ INICIO DE ARCHIVO
           </ul>
 
           <div class="hero-actions">
-            <a class="btn btn-blue" href="https://web-production-d14f76.up.railway.app/" target="_blank" rel="noopener noreferrer">Portal Condo Admin</a>
-            <a class="btn btn-gold" href="https://wa.me/522221144015?text=Hola%20JVSys.%0A%0AMe%20interesa%20recibir%20informaci%C3%B3n%20sobre%20Condo%20Admin.%0AGracias." target="_blank" rel="noopener noreferrer">Solicitar información</a>
+            <a class="btn btn-blue" href="https://web-production-d14f76.up.railway.app/" target="_blank" rel="noopener noreferrer" data-jvsys-event="click_portal_clientes" data-jvsys-product="condoadmin" data-jvsys-location="condoadmin_section">Portal Condo Admin</a>
+            <a class="btn btn-gold" href="https://wa.me/522221144015?text=Hola%20JVSys.%0A%0AMe%20interesa%20recibir%20informaci%C3%B3n%20sobre%20Condo%20Admin.%0AGracias." target="_blank" rel="noopener noreferrer" data-jvsys-event="click_whatsapp_condoadmin" data-jvsys-product="condoadmin" data-jvsys-location="condoadmin_section">Solicitar información</a>
           </div>
         </div>
         <div class="deep-img">
@@ -763,7 +803,7 @@ INICIO DE ARCHIVO
           </ul>
 
           <div class="hero-actions">
-            <a class="btn btn-gold" href="https://wa.me/522221144015?text=Hola%20JVSys.%0A%0AMe%20interesa%20recibir%20informaci%C3%B3n%20sobre%20NexoPay.%0AGracias." target="_blank" rel="noopener noreferrer">Solicitar información</a>
+            <a class="btn btn-gold" href="https://wa.me/522221144015?text=Hola%20JVSys.%0A%0AMe%20interesa%20recibir%20informaci%C3%B3n%20sobre%20NexoPay.%0AGracias." target="_blank" rel="noopener noreferrer" data-jvsys-event="click_whatsapp_nexopay" data-jvsys-product="nexopay" data-jvsys-location="nexopay_section">Solicitar información</a>
           </div>
         </div>
         <div class="deep-img">
@@ -804,14 +844,14 @@ INICIO DE ARCHIVO
         <h2>El siguiente paso puede ser más simple de lo que imaginas.</h2>
         <p>Conoce cómo Condo Admin y NexoPay pueden ayudarte a tener más control, mejor información y procesos más organizados.</p>
         <div class="hero-actions">
-          <a class="btn btn-gold" href="https://wa.me/522221144015?text=Hola%20JVSys.%0A%0AMe%20interesa%20recibir%20informaci%C3%B3n%20sobre%3A%0A%E2%96%A1%20Condo%20Admin%0A%E2%96%A1%20NexoPay%0A%0AGracias." target="_blank" rel="noopener noreferrer">Solicitar información</a>
+          <a class="btn btn-gold" href="https://wa.me/522221144015?text=Hola%20JVSys.%0A%0AMe%20interesa%20recibir%20informaci%C3%B3n%20sobre%3A%0A%E2%96%A1%20Condo%20Admin%0A%E2%96%A1%20NexoPay%0A%0AGracias." target="_blank" rel="noopener noreferrer" data-jvsys-event="click_whatsapp_general" data-jvsys-product="general" data-jvsys-location="hero">Solicitar información</a>
           <a class="btn btn-blue" href="https://web-production-d14f76.up.railway.app/" target="_blank" rel="noopener noreferrer">Portal Clientes</a>
         </div>
       </div>
     </section>
   </main>
 
-  <a class="whatsapp-float" href="https://wa.me/522221144015?text=Hola%20JVSys.%0A%0AMe%20interesa%20recibir%20informaci%C3%B3n.%0AGracias." target="_blank" rel="noopener noreferrer">Solicitar información</a>
+  <a class="whatsapp-float" href="https://wa.me/522221144015?text=Hola%20JVSys.%0A%0AMe%20interesa%20recibir%20informaci%C3%B3n.%0AGracias." target="_blank" rel="noopener noreferrer" data-jvsys-event="click_whatsapp_general" data-jvsys-product="general" data-jvsys-location="floating_button">Solicitar información</a>
 
   <footer class="footer">
     <div class="shell footer-grid">
@@ -838,12 +878,39 @@ INICIO DE ARCHIVO
       <div>Pendiente estratégico: versión /en/ con traducción profesional propia.</div>
     </div>
   </footer>
+
+  <script>
+    /*
+      JVSys Digital Intelligence Layer v1.0
+      Propósito:
+      Registrar eventos comerciales no invasivos en dataLayer para Google Tag Manager.
+      No captura nombres, correos, teléfonos ni información sensible.
+    */
+    window.dataLayer = window.dataLayer || [];
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var trackedElements = document.querySelectorAll('[data-jvsys-event]');
+
+      trackedElements.forEach(function (element) {
+        element.addEventListener('click', function () {
+          window.dataLayer.push({
+            event: element.getAttribute('data-jvsys-event'),
+            jvsys_product: element.getAttribute('data-jvsys-product') || 'general',
+            jvsys_location: element.getAttribute('data-jvsys-location') || 'unknown',
+            jvsys_page: window.location.pathname || '/',
+            jvsys_channel: 'website'
+          });
+        });
+      });
+    });
+  </script>
+
 </body>
 </html>
 <!--
 FIN DEL ARCHIVO
 ARCHIVO: index.html
-VERSIÓN: v3.0.0
+VERSIÓN: v3.1.0
 FECHA: 2026-05-28
-TOTAL DE LÍNEAS: 849
+TOTAL DE LÍNEAS: 916
 -->
