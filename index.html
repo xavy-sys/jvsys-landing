@@ -1,8 +1,8 @@
 <!--
 ARCHIVO: index.html
 RUTA SUGERIDA: /index.html
-VERSIÓN ANTERIOR: v3.1.0
-VERSIÓN NUEVA: v3.2.0
+VERSIÓN ANTERIOR: v3.2.0
+VERSIÓN NUEVA: v3.2.1
 FECHA: 2026-05-29
 PROYECTO: JVSys Home Corporativo / Ecosistema SaaS / Condo Admin Beta / NexoPay Powered by JVSys
 ELABORADO POR: JVSys / Team Osito
@@ -11,17 +11,17 @@ DESCRIPCIÓN:
 Home corporativo definitivo para jvsys.com.mx.
 Funciona como HUB empresarial de JVSys, con Condo Admin como plataforma disponible en Beta
 y NexoPay como infraestructura financiera en desarrollo avanzado al 70%.
-Esta versión consolida la nueva propiedad oficial de Google Analytics para JVSys.com.mx.
+Esta versión consolida la medición directa oficial de Google Analytics para JVSys.com.mx, eliminando la carga del contenedor GTM anterior para evitar doble medición.
 
 MOTIVO DE VERSIÓN:
-- Evolución de JVSys Home v3.1.0 hacia JVSys Digital Intelligence Layer v1.1.
-- Se conserva Google Tag Manager con el contenedor GTM-PWMV6MD7.
-- Se actualiza la referencia documental de GA4 a la propiedad oficial JVSys.com.mx.
+- Evolución de JVSys Home v3.2.0 hacia JVSys Digital Intelligence Layer v1.2.
+- Se retira temporalmente Google Tag Manager GTM-PWMV6MD7 del código público para eliminar duplicidad de medición.
+- Se conserva únicamente Google Analytics 4 directo con la propiedad oficial JVSys.com.mx.
 - Nuevo GA4 Measurement ID oficial: G-PM370DBFWH.
-- Se elimina del archivo la referencia documental heredada de la medición anterior.
+- Se evita que el sitio envíe eventos simultáneos a la medición anterior y a la medición oficial.
 - Se mantiene base audit-proof para eventos comerciales sin alterar diseño, colores, fuentes ni contenido visual.
 - Se agregan atributos data-jvsys-event y data-jvsys-product en enlaces comerciales críticos.
-- Se agrega dataLayer seguro para medir clics de WhatsApp, Condo Admin, NexoPay y Portal Clientes.
+- Se agrega envío directo seguro de eventos comerciales mediante gtag para WhatsApp, Condo Admin, NexoPay y Portal Clientes.
 - No se modifica identidad visual.
 - No se cambian colores corporativos.
 - No se cambian fuentes corporativas.
@@ -51,9 +51,9 @@ Subir también los archivos nuevos de imagen incluidos en este paquete.
 No aplicar parches parciales.
 
 CAPA DE INTELIGENCIA DIGITAL:
-- GTM Container ID: GTM-PWMV6MD7
+- GTM Container ID anterior: GTM-PWMV6MD7 (retirado temporalmente del código para evitar doble medición)
 - GA4 Measurement ID oficial JVSys.com.mx: G-PM370DBFWH
-- Estrategia: Google Tag Manager como orquestador principal.
+- Estrategia: Google Analytics 4 directo como medición oficial limpia.
 - Eventos comerciales preparados:
   - click_whatsapp_general
   - click_whatsapp_condoadmin
@@ -587,31 +587,19 @@ INICIO DE ARCHIVO
       .whatsapp-float { left: 13px; right: 13px; bottom: 14px; }
     }
   </style>
-  <!-- Google Tag Manager | JVSys Digital Intelligence Layer v1.1 | GTM-PWMV6MD7 | GA4 G-PM370DBFWH -->
+  <!-- Google Analytics 4 | JVSys Digital Intelligence Layer v1.2 | GA4 G-PM370DBFWH -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PM370DBFWH"></script>
   <script>
-    (function(w,d,s,l,i){
-      w[l]=w[l]||[];
-      w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
-      var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),
-          dl=l!='dataLayer'?'&l='+l:'';
-      j.async=true;
-      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-      f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PWMV6MD7');
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-PM370DBFWH');
   </script>
-  <!-- End Google Tag Manager -->
+  <!-- End Google Analytics 4 -->
 
 </head>
 
 <body>
-  <!-- Google Tag Manager (noscript) | JVSys Digital Intelligence Layer v1.1 -->
-  <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWMV6MD7"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe>
-  </noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
   <header class="topbar">
     <div class="shell nav">
       <a class="brand" href="#inicio">
@@ -884,25 +872,31 @@ INICIO DE ARCHIVO
 
   <script>
     /*
-      JVSys Digital Intelligence Layer v1.1
+      JVSys Digital Intelligence Layer v1.2
       Propósito:
-      Registrar eventos comerciales no invasivos en dataLayer para Google Tag Manager.
+      Registrar eventos comerciales no invasivos en Google Analytics 4.
       No captura nombres, correos, teléfonos ni información sensible.
+      Esta capa evita doble medición al usar únicamente el Measurement ID oficial JVSys.com.mx.
     */
-    window.dataLayer = window.dataLayer || [];
-
     document.addEventListener('DOMContentLoaded', function () {
       var trackedElements = document.querySelectorAll('[data-jvsys-event]');
 
       trackedElements.forEach(function (element) {
         element.addEventListener('click', function () {
-          window.dataLayer.push({
-            event: element.getAttribute('data-jvsys-event'),
+          var eventName = element.getAttribute('data-jvsys-event') || 'click_jvsys_unknown';
+          var eventPayload = {
             jvsys_product: element.getAttribute('data-jvsys-product') || 'general',
             jvsys_location: element.getAttribute('data-jvsys-location') || 'unknown',
             jvsys_page: window.location.pathname || '/',
             jvsys_channel: 'website'
-          });
+          };
+
+          if (typeof gtag === 'function') {
+            gtag('event', eventName, eventPayload);
+          }
+
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push(Object.assign({ event: eventName }, eventPayload));
         });
       });
     });
@@ -913,7 +907,7 @@ INICIO DE ARCHIVO
 <!--
 FIN DEL ARCHIVO
 ARCHIVO: index.html
-VERSIÓN: v3.2.0
+VERSIÓN: v3.2.1
 FECHA: 2026-05-29
-TOTAL DE LÍNEAS: 919
+TOTAL DE LÍNEAS: 913
 -->
