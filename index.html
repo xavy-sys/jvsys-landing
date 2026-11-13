@@ -52,6 +52,11 @@ INICIO DE ARCHIVO
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_MX" />
 
+  <!-- Tipografía Inter: la misma de la app Insight -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" />
+
   <!-- Google Analytics 4 · propiedad oficial JVSys.com.mx -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PM370DBFWH"></script>
   <script>
@@ -80,7 +85,7 @@ INICIO DE ARCHIVO
       --warn: #f0b429;
       --bad: #ef5a5a;
       --max: 1180px;
-      --font: Arial, Helvetica, sans-serif;
+      --font: Inter, "Segoe UI", Roboto, Arial, sans-serif;
       color-scheme: dark;
     }
 
@@ -149,7 +154,11 @@ INICIO DE ARCHIVO
     .hero { padding-block: 64px 72px; }
     .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
     .hero-grid > * { min-width: 0; }
-    .eyebrow { font-size: 13px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 18px; }
+    /* Igual que .insight-eyebrow de la app Insight, más el sello "Powered by JVSys" del logo */
+    .eyebrow { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin-bottom: 18px; }
+    .eyebrow .product { font-size: 12.5px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--gold-light); }
+    .eyebrow .by { font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--soft); padding-left: 14px; border-left: 1px solid var(--line-gold); }
+    .eyebrow .by b { font-size: 13px; font-weight: 800; letter-spacing: 0; text-transform: none; color: var(--white); margin-left: 4px; }
     h1 { font-size: clamp(36px, 4.4vw, 58px); font-weight: 900; letter-spacing: -.025em; }
     h1 .accent { color: var(--gold-light); }
     .lead { font-size: clamp(18px, 1.6vw, 21px); color: var(--muted); margin-top: 22px; max-width: 34em; }
@@ -325,7 +334,7 @@ INICIO DE ARCHIVO
     <section class="hero">
       <div class="shell hero-grid">
         <div>
-          <div class="eyebrow">Insight · Powered by JVSys</div>
+          <div class="eyebrow"><span class="product">Insight</span><span class="by">Powered by<b>JVSys</b></span></div>
           <h1>Cierra 2026 sabiendo <span class="accent">qué corregir</span> en tu negocio digital.</h1>
           <p class="lead">
             Insight revisa tu sitio web, tu correo y tu marca, y te dice en lenguaje simple
