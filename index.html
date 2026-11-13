@@ -1,66 +1,33 @@
 <!--
 ARCHIVO: index.html
 RUTA SUGERIDA: /index.html
-VERSIÓN ANTERIOR: v3.2.0
-VERSIÓN NUEVA: v3.2.1
-FECHA: 2026-05-29
-PROYECTO: JVSys Home Corporativo / Ecosistema SaaS / Condo Admin Beta / NexoPay Powered by JVSys
-ELABORADO POR: JVSys / Team Osito
+VERSIÓN ANTERIOR: v3.2.1
+VERSIÓN NUEVA: v4.0.0
+FECHA: 2026-11-13
+PROYECTO: JVSys Home Corporativo / Campaña Cierre 2026
+ELABORADO POR: JVSys
 
 DESCRIPCIÓN:
-Home corporativo definitivo para jvsys.com.mx.
-Funciona como HUB empresarial de JVSys, con Condo Admin como plataforma disponible en Beta
-y NexoPay como infraestructura financiera en desarrollo avanzado al 70%.
-Esta versión consolida la medición directa oficial de Google Analytics para JVSys.com.mx, eliminando la carga del contenedor GTM anterior para evitar doble medición.
+Home de fin de año enfocado en INSIGHT (Diagnóstico Digital de Cierre 2026 sin costo)
+y en NexoPay como plataforma de cobro que llega en 2027.
 
 MOTIVO DE VERSIÓN:
-- Evolución de JVSys Home v3.2.0 hacia JVSys Digital Intelligence Layer v1.2.
-- Se retira temporalmente Google Tag Manager GTM-PWMV6MD7 del código público para eliminar duplicidad de medición.
-- Se conserva únicamente Google Analytics 4 directo con la propiedad oficial JVSys.com.mx.
-- Nuevo GA4 Measurement ID oficial: G-PM370DBFWH.
-- Se evita que el sitio envíe eventos simultáneos a la medición anterior y a la medición oficial.
-- Se mantiene base audit-proof para eventos comerciales sin alterar diseño, colores, fuentes ni contenido visual.
-- Se agregan atributos data-jvsys-event y data-jvsys-product en enlaces comerciales críticos.
-- Se agrega envío directo seguro de eventos comerciales mediante gtag para WhatsApp, Condo Admin, NexoPay y Portal Clientes.
-- No se modifica identidad visual.
-- No se cambian colores corporativos.
-- No se cambian fuentes corporativas.
-- No se rediseña el Home.
-- No se elimina ningún componente del Home v3.0.0.
-- Se mantiene WhatsApp como canal escrito principal: 2221144015.
-- Se mantiene Portal Condo Admin: https://web-production-d14f76.up.railway.app/
-- Se conserva preparación estratégica para landings futuras: /condoadmin y /nexopay.
-- Pendiente estratégico futuro: versión /en/ con traducción profesional propia.
+- Insight pasa a ser el producto principal; el botón principal lleva a https://insight.jvsys.com.mx
+- NexoPay se presenta como "Próximamente 2027" (sin porcentaje de avance ni notas internas).
+- Condo Admin, NidoSys e Invicta pasan a una mención discreta en el pie de página.
+- Se retira "Portal Clientes" del menú; queda como enlace pequeño en el pie para clientes actuales.
+- Se carga de verdad GA4 (G-PM370DBFWH). La v3.2.1 lo documentaba pero no incluía el script.
+- Eventos nuevos: click_insight_diagnostico, click_whatsapp_insight, click_whatsapp_nexopay,
+  click_whatsapp_general, click_portal_clientes.
+- La barra de campaña se oculta sola después del 31 de diciembre de 2026.
+- Se conservan colores corporativos, Arial y WhatsApp 222 114 4015.
 
 ARCHIVOS REQUERIDOS:
 - index.html
 - Logo_JVsys.png
-- Logo_Fracc.jpeg
+- Logo_Insight.webp (nuevo)
 - Logo_NexoPay.png
-- Logo_NidoSys.png
-- Logo_Invicta.png
-- hero-nexopay.jpg
-- favicon.ico
-- favicon-16x16.png
-- favicon-32x32.png
-- apple-touch-icon.png
-
-INSTRUCCIÓN:
-Reemplazar COMPLETAMENTE el index.html actual.
-Subir también los archivos nuevos de imagen incluidos en este paquete.
-No aplicar parches parciales.
-
-CAPA DE INTELIGENCIA DIGITAL:
-- GTM Container ID anterior: GTM-PWMV6MD7 (retirado temporalmente del código para evitar doble medición)
-- GA4 Measurement ID oficial JVSys.com.mx: G-PM370DBFWH
-- Estrategia: Google Analytics 4 directo como medición oficial limpia.
-- Eventos comerciales preparados:
-  - click_whatsapp_general
-  - click_whatsapp_condoadmin
-  - click_whatsapp_nexopay
-  - click_condoadmin_section
-  - click_nexopay_section
-  - click_portal_clientes
+- favicon.ico, favicon-16x16.png, favicon-32x32.png, apple-touch-icon.png
 
 INICIO DE ARCHIVO
 -->
@@ -68,10 +35,10 @@ INICIO DE ARCHIVO
 <html lang="es-MX">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
-  <title>JVSys | Condo Admin Beta + NexoPay Powered by JVSys</title>
-  <meta name="description" content="JVSys desarrolla plataformas empresariales para administración, control operativo y gestión financiera. Condo Admin está disponible en Beta y NexoPay se encuentra en desarrollo avanzado como infraestructura financiera Powered by JVSys." />
+  <title>JVSys Insight | Diagnóstico digital de cierre 2026 sin costo</title>
+  <meta name="description" content="Insight revisa tu sitio web, tu correo y tu marca, y te dice en lenguaje simple qué corregir primero antes de invertir en 2027. Diagnóstico de cierre sin costo hasta el 31 de diciembre." />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#020814" />
 
@@ -80,514 +47,12 @@ INICIO DE ARCHIVO
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
-  <meta property="og:title" content="JVSys | Plataformas empresariales para operar con control" />
-  <meta property="og:description" content="Condo Admin Beta y NexoPay Powered by JVSys. Administración, control operativo, pagos, cobranza, evidencia y mejores decisiones." />
+  <meta property="og:title" content="Diagnóstico digital de cierre 2026 sin costo | JVSys Insight" />
+  <meta property="og:description" content="Descubre qué corregir en tu sitio web, tu correo y tu marca antes de invertir en 2027." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_MX" />
 
-  <style>
-    :root {
-      --deep-0: #020814;
-      --deep-1: #06162b;
-      --deep-2: #0b1f3a;
-      --blue: #26619C;
-      --blue-dark: #1c4976;
-      --gold: #d9a441;
-      --gold-light: #f3c35f;
-      --white: #f7f9fc;
-      --muted: #c5d7e9;
-      --soft: #91a8c0;
-      --line: rgba(197, 215, 233, 0.20);
-      --line-blue: rgba(38, 97, 156, 0.42);
-      --line-gold: rgba(217, 164, 65, 0.42);
-      --shadow: 0 28px 90px rgba(0, 0, 0, 0.44);
-      --max: 1180px;
-      --radius: 28px;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--white);
-      background:
-        radial-gradient(circle at 17% 0%, rgba(38, 97, 156, 0.36), transparent 33%),
-        radial-gradient(circle at 86% 8%, rgba(217, 164, 65, 0.12), transparent 28%),
-        linear-gradient(180deg, #020814 0%, #06162b 44%, #020814 100%);
-      line-height: 1.45;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    .shell { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(2, 8, 20, 0.96);
-      border-bottom: 1px solid rgba(197, 215, 233, 0.14);
-      backdrop-filter: blur(16px);
-    }
-
-    .nav {
-      min-height: 84px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 22px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      min-width: 260px;
-    }
-
-    .brand-logo {
-      width: 62px;
-      height: 62px;
-      object-fit: contain;
-      border-radius: 50%;
-      padding: 3px;
-      background: #ffffff;
-      border: 1px solid var(--line-gold);
-      box-shadow: 0 14px 30px rgba(0,0,0,.28);
-    }
-
-    .brand-name {
-      font-size: 28px;
-      font-weight: 900;
-      letter-spacing: -0.8px;
-    }
-
-    .brand-sub {
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.25;
-      margin-top: 2px;
-    }
-
-    .menu {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-      font-size: 15px;
-      font-weight: 800;
-      color: #eaf5ff;
-    }
-
-    .menu a:hover { color: var(--gold-light); }
-
-    .nav-actions {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
-
-    .btn {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      gap: 8px;
-      min-height: 50px;
-      padding: 0 22px;
-      border-radius: 12px;
-      border: 1px solid transparent;
-      font-weight: 900;
-      white-space: nowrap;
-      transition: transform .18s ease, box-shadow .18s ease;
-    }
-
-    .btn:hover { transform: translateY(-2px); }
-    .btn-gold {
-      background: linear-gradient(135deg, var(--gold-light), var(--gold));
-      color: #06162b;
-      box-shadow: 0 18px 40px rgba(217, 164, 65, 0.24);
-    }
-    .btn-blue {
-      background: linear-gradient(135deg, var(--blue), var(--blue-dark));
-      color: #ffffff;
-      box-shadow: 0 18px 40px rgba(38, 97, 156, 0.28);
-    }
-    .btn-ghost {
-      background: rgba(255,255,255,.045);
-      border-color: rgba(197,215,233,.28);
-      color: #ffffff;
-    }
-
-    .hero { padding: 74px 0 48px; }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: .96fr 1.04fr;
-      gap: 46px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      color: var(--gold-light);
-      font-size: 14px;
-      font-weight: 900;
-      letter-spacing: 2.4px;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      font-size: clamp(44px, 5.6vw, 76px);
-      line-height: 1.02;
-      letter-spacing: -2.2px;
-    }
-
-    .accent { color: var(--gold-light); }
-    .lead {
-      margin-top: 26px;
-      max-width: 670px;
-      color: var(--muted);
-      font-size: clamp(20px, 2.1vw, 26px);
-      line-height: 1.38;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 32px;
-    }
-
-    .microcopy {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 20px;
-    }
-
-    .microcopy span {
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(197,215,233,.18);
-      background: rgba(255,255,255,.04);
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 800;
-    }
-
-    .hero-card {
-      position: relative;
-      overflow: hidden;
-      padding: 20px;
-      border-radius: 32px;
-      border: 1px solid var(--line-blue);
-      background: linear-gradient(145deg, rgba(11,31,58,.82), rgba(2,8,20,.92));
-      box-shadow: var(--shadow);
-    }
-
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      inset: -40%;
-      background: radial-gradient(circle, rgba(217,164,65,.14), transparent 34%);
-      pointer-events: none;
-    }
-
-    .hero-card img {
-      position: relative;
-      width: 100%;
-      border-radius: 24px;
-      object-fit: contain;
-    }
-
-    .powered {
-      position: relative;
-      margin-top: 14px;
-      text-align: right;
-      color: var(--muted);
-      font-weight: 800;
-    }
-
-    .powered strong {
-      color: #ffffff;
-      font-size: 22px;
-    }
-
-    .section { padding: 64px 0; }
-    .section-title {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .section-title h2 {
-      font-size: clamp(30px, 3.8vw, 48px);
-      line-height: 1.12;
-      letter-spacing: -1px;
-    }
-
-    .section-title p {
-      max-width: 840px;
-      margin: 10px auto 0;
-      color: var(--muted);
-      font-size: 18px;
-    }
-
-    .platform-grid {
-      display: grid;
-      grid-template-columns: 1.12fr 1fr .86fr .86fr;
-      gap: 16px;
-    }
-
-    .card {
-      min-height: 310px;
-      padding: 24px;
-      border-radius: 24px;
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(11,31,58,.68), rgba(2,8,20,.72));
-      box-shadow: 0 20px 58px rgba(0,0,0,.24);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .card.featured { border-color: var(--line-gold); }
-
-    .logo-plate {
-      width: 108px;
-      height: 108px;
-      margin-bottom: 16px;
-      border-radius: 24px;
-      background: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid var(--line-gold);
-      box-shadow: 0 16px 34px rgba(0,0,0,.28);
-      overflow: hidden;
-    }
-
-    .logo-plate img {
-      max-width: 94%;
-      max-height: 94%;
-      object-fit: contain;
-    }
-
-    .nexopay-plate {
-      width: 182px;
-      height: 90px;
-      background: rgba(2,8,20,.88);
-    }
-
-    .status {
-      display: inline-flex;
-      align-items: center;
-      min-height: 30px;
-      padding: 0 12px;
-      border-radius: 999px;
-      border: 1px solid var(--line-gold);
-      color: var(--gold-light);
-      background: rgba(217,164,65,.12);
-      font-size: 12px;
-      font-weight: 900;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    .card h3 {
-      font-size: 26px;
-      margin-bottom: 8px;
-    }
-
-    .card p {
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.5;
-    }
-
-    .card ul, .plain-list {
-      list-style: none;
-      display: grid;
-      gap: 8px;
-      margin: 16px 0;
-      color: #eaf5ff;
-      font-size: 14px;
-    }
-
-    .card li::before, .plain-list li::before {
-      content: "✓ ";
-      color: var(--gold-light);
-      font-weight: 900;
-    }
-
-    .problem-grid, .why-grid, .use-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-
-    .why-grid, .use-grid { grid-template-columns: repeat(4, 1fr); }
-
-    .panel {
-      padding: 26px;
-      border-radius: 24px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.045);
-    }
-
-    .panel h3 {
-      font-size: 24px;
-      margin-bottom: 14px;
-    }
-
-    .panel p, .panel li { color: var(--muted); }
-    .panel ul {
-      list-style: none;
-      display: grid;
-      gap: 10px;
-    }
-
-    .bad li::before {
-      content: "× ";
-      color: var(--gold);
-      font-weight: 900;
-    }
-
-    .good li::before {
-      content: "✓ ";
-      color: var(--gold);
-      font-weight: 900;
-    }
-
-    .deep {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-      align-items: center;
-      padding: 32px;
-      border-radius: 32px;
-      border: 1px solid var(--line-blue);
-      background: linear-gradient(135deg, rgba(11,31,58,.76), rgba(2,8,20,.84));
-      box-shadow: var(--shadow);
-    }
-
-    .deep + .deep { margin-top: 28px; }
-    .deep h2 {
-      font-size: clamp(32px, 4vw, 52px);
-      line-height: 1.08;
-      margin-bottom: 16px;
-    }
-
-    .deep p {
-      color: var(--muted);
-      font-size: 18px;
-      margin-bottom: 18px;
-    }
-
-    .deep-img {
-      padding: 14px;
-      border-radius: 24px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.03);
-    }
-
-    .deep-img img {
-      margin: auto;
-      border-radius: 18px;
-      max-height: 460px;
-      object-fit: contain;
-    }
-
-    .close {
-      padding: 40px;
-      text-align: center;
-      border-radius: 30px;
-      border: 1px solid var(--line-gold);
-      background: radial-gradient(circle at 85% 0%, rgba(217,164,65,.13), transparent 32%), rgba(2,8,20,.74);
-      box-shadow: var(--shadow);
-    }
-
-    .close h2 {
-      font-size: clamp(32px, 4vw, 54px);
-      margin-bottom: 14px;
-    }
-
-    .close p {
-      max-width: 820px;
-      margin: 0 auto;
-      color: var(--muted);
-      font-size: 18px;
-    }
-
-    .close .hero-actions { justify-content: center; }
-
-    .whatsapp-float {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      z-index: 80;
-      min-height: 50px;
-      padding: 0 22px;
-      border-radius: 999px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, var(--gold-light), var(--gold));
-      color: #06162b;
-      border: 1px solid rgba(255,255,255,.24);
-      font-weight: 900;
-      box-shadow: 0 18px 42px rgba(217,164,65,.32);
-    }
-
-    .footer {
-      padding: 42px 0;
-      border-top: 1px solid var(--line);
-      color: var(--soft);
-      font-size: 14px;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.2fr .8fr .8fr;
-      gap: 26px;
-    }
-
-    .footer h3 { color: #ffffff; margin-bottom: 10px; }
-    .footer a, .footer p {
-      display: block;
-      color: var(--soft);
-      line-height: 1.75;
-    }
-
-    .footer-bottom {
-      margin-top: 24px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(197,215,233,.12);
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 1100px) {
-      .menu { display: none; }
-      .hero-grid, .deep, .problem-grid { grid-template-columns: 1fr; }
-      .platform-grid { grid-template-columns: 1fr 1fr; }
-      .why-grid, .use-grid { grid-template-columns: 1fr 1fr; }
-    }
-
-    @media (max-width: 760px) {
-      .shell { width: min(100% - 26px, var(--max)); }
-      .nav { flex-wrap: wrap; padding: 14px 0; }
-      .brand-logo { width: 50px; height: 50px; }
-      .brand-name { font-size: 24px; }
-      .nav-actions { width: 100%; display: grid; grid-template-columns: 1fr 1fr; }
-      .btn { width: 100%; padding: 0 12px; font-size: 13px; }
-      h1 { font-size: 44px; }
-      .platform-grid, .why-grid, .use-grid, .footer-grid { grid-template-columns: 1fr; }
-      .hero-actions { flex-direction: column; }
-      .close { padding: 24px; }
-      .whatsapp-float { left: 13px; right: 13px; bottom: 14px; }
-    }
-  </style>
-  <!-- Google Analytics 4 | JVSys Digital Intelligence Layer v1.2 | GA4 G-PM370DBFWH -->
+  <!-- Google Analytics 4 · propiedad oficial JVSys.com.mx -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PM370DBFWH"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -595,34 +60,264 @@ INICIO DE ARCHIVO
     gtag('js', new Date());
     gtag('config', 'G-PM370DBFWH');
   </script>
-  <!-- End Google Analytics 4 -->
 
+  <style>
+    /* Layout: columna central de 1180px; hero en dos columnas (mensaje + ejemplo de resultado), secciones apiladas que pasan a una columna en celular. */
+    :root {
+      --deep-0: #020814;
+      --deep-1: #06162b;
+      --deep-2: #0b1f3a;
+      --blue: #26619C;
+      --blue-bright: #3d82c9;
+      --gold: #d9a441;
+      --gold-light: #f3c35f;
+      --white: #f7f9fc;
+      --muted: #c5d7e9;
+      --soft: #91a8c0;
+      --line: rgba(197, 215, 233, 0.16);
+      --line-gold: rgba(217, 164, 65, 0.42);
+      --ok: #3fbf7f;
+      --warn: #f0b429;
+      --bad: #ef5a5a;
+      --max: 1180px;
+      --font: Arial, Helvetica, sans-serif;
+      color-scheme: dark;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; background: var(--deep-0); }
+    body {
+      font-family: var(--font);
+      color: var(--white);
+      background:
+        radial-gradient(circle at 12% 0%, rgba(38, 97, 156, 0.34), transparent 34%),
+        radial-gradient(circle at 90% 6%, rgba(217, 164, 65, 0.10), transparent 26%),
+        linear-gradient(180deg, var(--deep-0) 0%, var(--deep-1) 46%, var(--deep-0) 100%);
+      line-height: 1.5;
+      font-size: 16px;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    h1, h2, h3 { text-wrap: balance; line-height: 1.1; }
+    :focus-visible { outline: 2px solid var(--gold-light); outline-offset: 3px; border-radius: 6px; }
+
+    .shell {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding-left: max(20px, env(safe-area-inset-left, 0px));
+      padding-right: max(20px, env(safe-area-inset-right, 0px));
+    }
+
+    /* ---------- botones ---------- */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      min-height: 50px; padding: 0 24px; border-radius: 14px;
+      font-weight: 800; font-size: 15px; white-space: nowrap;
+      border: 1px solid transparent; transition: transform .15s ease, background .15s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-gold { background: linear-gradient(180deg, var(--gold-light), var(--gold)); color: var(--deep-0); box-shadow: 0 10px 30px rgba(217,164,65,.22); }
+    .btn-ghost { border-color: var(--line); color: var(--white); background: rgba(255,255,255,.03); }
+    .btn-ghost:hover { border-color: var(--line-gold); }
+    .btn-sm { min-height: 42px; padding: 0 18px; font-size: 14px; border-radius: 12px; }
+
+    /* ---------- barra de campaña ---------- */
+    .promo {
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      color: var(--deep-0);
+      font-size: 14px; font-weight: 700;
+    }
+    .promo .shell { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 14px; padding-block: 10px; text-align: center; }
+    .promo a { text-decoration: underline; text-underline-offset: 3px; font-weight: 900; }
+
+    /* ---------- encabezado ---------- */
+    body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--deep-0); }
+    .topbar {
+      position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+      background: rgba(2, 8, 20, .88); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 14px; }
+    .brand { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .brand img { width: 46px; height: 46px; border-radius: 50%; background: #fff; }
+    .brand b { font-size: 22px; font-weight: 900; letter-spacing: -.01em; }
+    .menu { display: flex; gap: 28px; font-size: 15px; font-weight: 700; color: var(--muted); }
+    .menu a { white-space: nowrap; }
+    .menu a:hover { color: var(--gold-light); }
+
+    /* ---------- hero ---------- */
+    .hero { padding-block: 64px 72px; }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
+    .hero-grid > * { min-width: 0; }
+    .eyebrow { font-size: 13px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 18px; }
+    h1 { font-size: clamp(36px, 4.4vw, 58px); font-weight: 900; letter-spacing: -.025em; }
+    h1 .accent { color: var(--gold-light); }
+    .lead { font-size: clamp(18px, 1.6vw, 21px); color: var(--muted); margin-top: 22px; max-width: 34em; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .assurances { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 20px; font-size: 14px; color: var(--soft); list-style: none; }
+    .assurances li::before { content: "✓"; color: var(--ok); font-weight: 900; margin-right: 7px; }
+
+    /* ejemplo de resultado (maqueta del informe de Insight) */
+    .report {
+      background: linear-gradient(180deg, var(--deep-2), var(--deep-1));
+      border: 1px solid var(--line-gold); border-radius: 24px;
+      padding: 26px; box-shadow: 0 30px 90px rgba(0,0,0,.45);
+    }
+    .report-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 14px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+    .report-head small { display: block; font-size: 12px; color: var(--soft); text-transform: uppercase; letter-spacing: .1em; font-weight: 700; }
+    .report-head strong { display: block; font-size: 18px; margin-top: 4px; }
+    .sample-tag { font-size: 11px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; color: var(--gold-light); border: 1px solid var(--line-gold); border-radius: 999px; padding: 4px 10px; white-space: nowrap; }
+    .score { display: flex; align-items: center; gap: 16px; padding-block: 18px; }
+    .score-num { font-size: 44px; font-weight: 900; color: var(--warn); font-variant-numeric: tabular-nums; line-height: 1; }
+    .score-num span { font-size: 18px; color: var(--soft); font-weight: 700; }
+    .score p { font-size: 14px; color: var(--muted); }
+    .findings { list-style: none; display: grid; gap: 10px; }
+    .finding { display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: start; padding: 12px 14px; border-radius: 14px; background: rgba(255,255,255,.035); border: 1px solid var(--line); font-size: 14px; color: var(--muted); }
+    .finding b { color: var(--white); display: block; font-size: 14.5px; margin-bottom: 2px; }
+    .pill { font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: .06em; padding: 4px 8px; border-radius: 8px; margin-top: 1px; white-space: nowrap; }
+    .pill.bad { background: rgba(239,90,90,.16); color: var(--bad); }
+    .pill.warn { background: rgba(240,180,41,.16); color: var(--warn); }
+    .pill.ok { background: rgba(63,191,127,.16); color: var(--ok); }
+    .priority { margin-top: 16px; padding: 14px 16px; border-radius: 14px; background: rgba(217,164,65,.10); border: 1px solid var(--line-gold); font-size: 14px; color: var(--muted); }
+    .priority b { color: var(--gold-light); }
+
+    /* ---------- secciones ---------- */
+    .section { padding-block: 72px; }
+    .section-alt { background: rgba(11, 31, 58, .45); border-block: 1px solid var(--line); }
+    .section-title { max-width: 46em; margin-bottom: 40px; }
+    .section-title h2 { font-size: clamp(28px, 3.2vw, 42px); font-weight: 900; letter-spacing: -.02em; }
+    .section-title p { font-size: 18px; color: var(--muted); margin-top: 14px; max-width: 40em; }
+
+    .insight-logo { width: 220px; height: auto; background: #fff; border-radius: 16px; padding: 10px 14px; margin-bottom: 24px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .grid-4 > *, .grid-2 > * { min-width: 0; }
+
+    .check {
+      padding: 26px; border-radius: 20px; border: 1px solid var(--line);
+      background: rgba(255,255,255,.025);
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .check .ix { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; background: rgba(38,97,156,.28); color: var(--gold-light); }
+    .check .ix svg { width: 22px; height: 22px; }
+    .check h3 { font-size: 19px; font-weight: 900; }
+    .check p { color: var(--muted); font-size: 15px; }
+
+    /* pasos: es un proceso real, por eso va numerado */
+    .steps { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; counter-reset: paso; }
+    .steps li { counter-increment: paso; padding-top: 22px; border-top: 2px solid var(--line-gold); min-width: 0; }
+    .steps li::before { content: "Paso " counter(paso); display: block; font-size: 12px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 10px; }
+    .steps h3 { font-size: 18px; font-weight: 900; margin-bottom: 6px; }
+    .steps p { color: var(--muted); font-size: 15px; }
+    .steps .opt { color: var(--soft); font-weight: 700; font-size: 13px; }
+
+    .scope { padding: 28px; border-radius: 20px; border: 1px solid var(--line); }
+    .scope.in { border-color: rgba(63,191,127,.38); background: rgba(63,191,127,.05); }
+    .scope h3 { font-size: 20px; font-weight: 900; margin-bottom: 16px; }
+    .scope ul { list-style: none; display: grid; gap: 10px; color: var(--muted); }
+    .scope li { padding-left: 26px; position: relative; }
+    .scope.in li::before { content: "✓"; position: absolute; left: 0; color: var(--ok); font-weight: 900; }
+    .scope.out li::before { content: "+"; position: absolute; left: 2px; color: var(--gold-light); font-weight: 900; }
+    .scope .note { margin-top: 18px; font-size: 14px; color: var(--soft); }
+
+    /* NexoPay */
+    .nexo { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
+    .nexo > * { min-width: 0; }
+    .soon { display: inline-block; font-size: 12px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; color: var(--deep-0); background: var(--gold-light); border-radius: 999px; padding: 6px 12px; margin-bottom: 18px; }
+    .nexo h2 { font-size: clamp(28px, 3.2vw, 42px); font-weight: 900; letter-spacing: -.02em; }
+    .nexo p { color: var(--muted); font-size: 18px; margin-top: 14px; max-width: 34em; }
+    .methods { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; list-style: none; }
+    .methods li { border: 1px solid var(--line); border-radius: 999px; padding: 8px 16px; font-size: 14px; font-weight: 800; color: var(--white); }
+    .nexo-card { border-radius: 24px; border: 1px solid var(--line-gold); background: #050b16; padding: 34px; display: grid; place-items: center; }
+    .nexo-card img { max-height: 120px; width: auto; }
+    .nexo-card ul { list-style: none; margin-top: 26px; display: grid; gap: 10px; width: 100%; color: var(--muted); font-size: 15px; }
+    .nexo-card li { padding: 12px 14px; border-radius: 12px; background: rgba(255,255,255,.04); }
+
+    /* preguntas */
+    .faq { display: grid; gap: 12px; max-width: 820px; }
+    .faq details { border: 1px solid var(--line); border-radius: 16px; background: rgba(255,255,255,.025); }
+    .faq summary { cursor: pointer; padding: 18px 22px; font-weight: 800; font-size: 17px; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; color: var(--gold-light); font-weight: 900; font-size: 20px; line-height: 1; }
+    .faq details[open] summary::after { content: "–"; }
+    .faq details p { padding: 0 22px 20px; color: var(--muted); }
+
+    /* cierre */
+    .close { text-align: center; padding: 56px 28px; border-radius: 28px; border: 1px solid var(--line-gold); background: radial-gradient(circle at 50% 0%, rgba(217,164,65,.14), transparent 60%), var(--deep-2); }
+    .close h2 { font-size: clamp(28px, 3.4vw, 44px); font-weight: 900; letter-spacing: -.02em; }
+    .close p { color: var(--muted); font-size: 18px; margin: 14px auto 0; max-width: 34em; }
+    .close .actions { justify-content: center; }
+    .phone { margin-top: 18px; color: var(--soft); font-size: 15px; }
+    .phone b { color: var(--white); user-select: all; }
+
+    /* pie */
+    .footer { border-top: 1px solid var(--line); padding-block: 40px; color: var(--soft); font-size: 14px; }
+    .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 32px; }
+    .footer-grid > * { min-width: 0; }
+    .footer h3 { color: var(--white); font-size: 15px; margin-bottom: 10px; }
+    .footer a { display: block; margin-top: 6px; }
+    .footer a:hover { color: var(--gold-light); }
+    .footer .others { line-height: 1.8; }
+    .footer-bottom { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line); }
+
+    /* botón flotante: compacto para no tapar contenido */
+    .wa-float {
+      position: fixed; z-index: 15;
+      right: calc(18px + env(safe-area-inset-right, 0px));
+      bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #1f9d55; color: #fff; font-weight: 800; font-size: 14px;
+      padding: 12px 16px; border-radius: 999px; box-shadow: 0 10px 30px rgba(0,0,0,.4);
+    }
+    .wa-float svg { width: 20px; height: 20px; }
+
+    @media (max-width: 1000px) {
+      .menu { display: none; }
+      .hero-grid, .nexo { grid-template-columns: 1fr; gap: 40px; }
+      .grid-4, .steps { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .hero { padding-block: 40px 56px; }
+      .section { padding-block: 56px; }
+      .brand b { font-size: 19px; }
+      .brand img { width: 40px; height: 40px; }
+      .grid-4, .grid-2, .steps, .footer-grid { grid-template-columns: 1fr; }
+      .actions .btn { width: 100%; }
+      .report { padding: 20px; }
+      .wa-float span { display: none; }
+      .wa-float { padding: 14px; }
+      .nav .btn { padding: 0 14px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .btn { transition: none; }
+      .btn:hover { transform: none; }
+    }
+  </style>
 </head>
 
 <body>
+  <div class="promo" id="promo" data-hasta="2026-12-31">
+    <div class="shell">
+      <span>Diagnóstico Digital de Cierre 2026 <strong>sin costo</strong>, disponible hasta el 31 de diciembre.</span>
+      <a href="https://insight.jvsys.com.mx/?utm_source=jvsys.com.mx&amp;utm_medium=web&amp;utm_campaign=cierre2026" target="_blank" rel="noopener noreferrer" data-jvsys-event="click_insight_diagnostico" data-jvsys-product="insight" data-jvsys-location="promo_bar">Solicitar mi diagnóstico</a>
+    </div>
+  </div>
+
   <header class="topbar">
     <div class="shell nav">
-      <a class="brand" href="#inicio">
-        <img class="brand-logo" src="Logo_JVsys.png" alt="Logo JVSys">
-        <div>
-          <div class="brand-name">JVSys</div>
-          <div class="brand-sub">Plataformas empresariales<br>para operar con control</div>
-        </div>
+      <a class="brand" href="#inicio" aria-label="JVSys, inicio">
+        <img src="Logo_JVsys.png" alt="">
+        <b>JVSys</b>
       </a>
-
-      <nav class="menu">
-        <a href="#inicio">Inicio</a>
-        <a href="#plataformas">Plataformas</a>
-        <a href="#condoadmin">Condo Admin</a>
+      <nav class="menu" aria-label="Principal">
+        <a href="#insight">Insight</a>
+        <a href="#como-funciona">Cómo funciona</a>
         <a href="#nexopay">NexoPay</a>
-        <a href="#confianza">Por qué JVSys</a>
-        <a href="#casos">Casos de uso</a>
+        <a href="#preguntas">Preguntas</a>
       </nav>
-
-      <div class="nav-actions">
-        <a class="btn btn-ghost" href="https://web-production-d14f76.up.railway.app/" target="_blank" rel="noopener noreferrer" data-jvsys-event="click_portal_clientes" data-jvsys-product="condoadmin" data-jvsys-location="topbar">Portal Clientes</a>
-        <a class="btn btn-gold" href="https://wa.me/522221144015?text=Hola%20JVSys.%0A%0AMe%20interesa%20recibir%20informaci%C3%B3n%20sobre%3A%0A%E2%96%A1%20Condo%20Admin%0A%E2%96%A1%20NexoPay%0A%E2%96%A1%20Otra%20soluci%C3%B3n%0A%0AGracias." target="_blank" rel="noopener noreferrer" data-jvsys-event="click_whatsapp_general" data-jvsys-product="general" data-jvsys-location="topbar">Solicitar información</a>
-      </div>
+      <a class="btn btn-gold btn-sm" href="https://insight.jvsys.com.mx/?utm_source=jvsys.com.mx&amp;utm_medium=web&amp;utm_campaign=cierre2026" target="_blank" rel="noopener noreferrer" data-jvsys-event="click_insight_diagnostico" data-jvsys-product="insight" data-jvsys-location="topbar">Diagnóstico gratis</a>
     </div>
   </header>
 
@@ -630,284 +325,263 @@ INICIO DE ARCHIVO
     <section class="hero">
       <div class="shell hero-grid">
         <div>
-          <div class="eyebrow">Condo Admin Beta · NexoPay Powered by JVSys</div>
-          <h1>Tecnología que organiza, <span class="accent">controla</span> y hace crecer tu operación.</h1>
+          <div class="eyebrow">Insight · Powered by JVSys</div>
+          <h1>Cierra 2026 sabiendo <span class="accent">qué corregir</span> en tu negocio digital.</h1>
           <p class="lead">
-            Plataformas empresariales diseñadas para administrar condominios, automatizar procesos
-            y preparar a tu organización para crecer con información confiable y control operativo.
+            Insight revisa tu sitio web, tu correo y tu marca, y te dice en lenguaje simple
+            qué corregir primero, antes de invertir en 2027.
           </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-gold" href="https://wa.me/522221144015?text=Hola%20JVSys.%0A%0AMe%20interesa%20recibir%20informaci%C3%B3n%20sobre%3A%0A%E2%96%A1%20Condo%20Admin%0A%E2%96%A1%20NexoPay%0A%0AGracias." target="_blank" rel="noopener noreferrer" data-jvsys-event="click_whatsapp_general" data-jvsys-product="general" data-jvsys-location="hero">Solicitar información</a>
-            <a class="btn btn-blue" href="#condoadmin" data-jvsys-event="click_condoadmin_section" data-jvsys-product="condoadmin" data-jvsys-location="hero">Ver Condo Admin</a>
-            <a class="btn btn-ghost" href="#nexopay" data-jvsys-event="click_nexopay_section" data-jvsys-product="nexopay" data-jvsys-location="hero">Descubrir NexoPay</a>
+          <div class="actions">
+            <a class="btn btn-gold" href="https://insight.jvsys.com.mx/?utm_source=jvsys.com.mx&amp;utm_medium=web&amp;utm_campaign=cierre2026" target="_blank" rel="noopener noreferrer" data-jvsys-event="click_insight_diagnostico" data-jvsys-product="insight" data-jvsys-location="hero">Solicita tu diagnóstico gratis</a>
+            <a class="btn btn-ghost" href="#insight">Ver qué revisa</a>
           </div>
-
-          <div class="microcopy">
-            <span>Atención por WhatsApp</span>
-            <span>Sin llamadas inesperadas</span>
-            <span>Información sin compromiso</span>
-          </div>
+          <ul class="assurances">
+            <li>Sin tarjeta</li>
+            <li>Resultado en lenguaje simple</li>
+            <li>Sin compromiso</li>
+          </ul>
         </div>
 
-        <div class="hero-card">
-          <img src="hero-nexopay.jpg" alt="NexoPay powered by JVSys">
-          <div class="powered">Powered by <strong>JVSys</strong></div>
+        <aside class="report" aria-label="Ejemplo de resultado de Insight">
+          <div class="report-head">
+            <div>
+              <small>Diagnóstico de cierre 2026</small>
+              <strong>tunegocio.com.mx</strong>
+            </div>
+            <span class="sample-tag">Ejemplo</span>
+          </div>
+          <div class="score">
+            <div class="score-num">62<span>/100</span></div>
+            <p>Salud digital. Tu sitio funciona, pero hay tres puntos que conviene atender antes de invertir en publicidad.</p>
+          </div>
+          <ul class="findings">
+            <li class="finding"><span class="pill bad">Atender</span><div><b>Cualquiera puede enviar correos a tu nombre</b>Tu dominio no tiene una política que lo impida.</div></li>
+            <li class="finding"><span class="pill warn">Revisar</span><div><b>Hay 2 dominios parecidos al tuyo</b>Podrían usarse para engañar a tus clientes.</div></li>
+            <li class="finding"><span class="pill warn">Revisar</span><div><b>Tu sitio tarda 6 segundos en abrir en celular</b>Muchos visitantes se van antes de verlo.</div></li>
+            <li class="finding"><span class="pill ok">Bien</span><div><b>Tu certificado de seguridad está vigente</b>El candado aparece en el navegador.</div></li>
+          </ul>
+          <div class="priority"><b>Prioridad para enero:</b> proteger tu correo y tu dominio.</div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="shell">
+        <div class="section-title">
+          <h2>¿Vas a invertir en web, redes o publicidad en 2027 sin saber qué está fallando?</h2>
+          <p>
+            Muchos negocios pagan campañas mientras su sitio carga lento, sus correos llegan a spam
+            o alguien registra un dominio parecido al suyo. Es dinero que se pierde sin que nadie lo note.
+          </p>
         </div>
       </div>
     </section>
 
-    <section class="section" id="plataformas">
+    <section class="section" id="insight">
       <div class="shell">
         <div class="section-title">
-          <h2>Nuestras plataformas</h2>
-          <p>Soluciones especializadas que se complementan para administrar, controlar y crecer con orden.</p>
+          <img class="insight-logo" src="Logo_Insight.webp" alt="JVSys Insight" width="640" height="320">
+          <h2>Qué revisa Insight</h2>
+          <p>Lo que ven tus clientes, y lo que podría verse mal, cuando buscan tu negocio en internet.</p>
         </div>
-
-        <div class="platform-grid">
-          <article class="card featured">
-            <div>
-              <span class="status">Disponible · Beta operativa</span>
-              <div class="logo-plate"><img src="Logo_Fracc.jpeg" alt="Logo Condo Admin"></div>
-              <h3>Condo Admin</h3>
-              <p>App para administración profesional de condominios y fraccionamientos.</p>
-              <ul>
-                <li>Control de acceso</li>
-                <li>Cobranza</li>
-                <li>Estados de cuenta</li>
-                <li>Reportes</li>
-              </ul>
-            </div>
-            <a class="btn btn-blue" href="https://web-production-d14f76.up.railway.app/" target="_blank" rel="noopener noreferrer" data-jvsys-event="click_portal_clientes" data-jvsys-product="condoadmin" data-jvsys-location="platform_card">Ir a Condo Admin</a>
+        <div class="grid-4">
+          <article class="check">
+            <div class="ix" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 8h18M8 21h8"/></svg></div>
+            <h3>Tu sitio web</h3>
+            <p>Velocidad, errores y las señales que ven tus clientes al entrar desde el celular o la computadora.</p>
           </article>
-
-          <article class="card featured">
-            <div>
-              <span class="status">Desarrollo avanzado · 70%</span>
-              <div class="logo-plate nexopay-plate"><img src="Logo_NexoPay.png" alt="Logo NexoPay"></div>
-              <h3>NexoPay</h3>
-              <p>Infraestructura financiera inteligente para pagos, cobranza, conciliación y reportes.</p>
-              <ul>
-                <li>Pagos y cobranza</li>
-                <li>Conciliación</li>
-                <li>Evidencia documental</li>
-                <li>Reportes financieros</li>
-              </ul>
-            </div>
-            <a class="btn btn-gold" href="#nexopay" data-jvsys-event="click_nexopay_section" data-jvsys-product="nexopay" data-jvsys-location="platform_card">Descubrir NexoPay</a>
+          <article class="check">
+            <div class="ix" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
+            <h3>Tu correo y dominio</h3>
+            <p>La configuración que evita que tus correos lleguen a spam o que alguien envíe mensajes haciéndose pasar por ti.</p>
           </article>
-
-          <article class="card">
-            <div>
-              <span class="status">Próximamente</span>
-              <div class="logo-plate"><img src="Logo_NidoSys.png" alt="Logo NidoSys"></div>
-              <h3>NidoSys</h3>
-              <p>Arquitectura definida para gestión educativa, control infantil y operación escolar.</p>
-            </div>
-            <span class="btn btn-ghost">Próximamente</span>
+          <article class="check">
+            <div class="ix" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+            <h3>Tu marca</h3>
+            <p>Dominios parecidos al tuyo que podrían usarse para engañar a tus clientes, con fuente y fecha.</p>
           </article>
-
-          <article class="card">
-            <div>
-              <span class="status">Próximamente</span>
-              <div class="logo-plate"><img src="Logo_Invicta.png" alt="Logo Invicta"></div>
-              <h3>Invicta</h3>
-              <p>Arquitectura definida para inteligencia, control estratégico y crecimiento empresarial.</p>
-            </div>
-            <span class="btn btn-ghost">Próximamente</span>
+          <article class="check">
+            <div class="ix" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
+            <h3>Tu competencia</h3>
+            <p>Un FODA rápido para ver dónde estás frente a otros negocios de tu giro y tu ciudad.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="problema">
+    <section class="section section-alt" id="como-funciona">
       <div class="shell">
         <div class="section-title">
-          <h2>¿Tu operación depende de demasiados procesos manuales?</h2>
-          <p>Muchas organizaciones pierden tiempo, control e información porque sus procesos están dispersos entre hojas de cálculo, mensajes, documentos y sistemas aislados.</p>
+          <h2>Cómo funciona el diagnóstico de cierre</h2>
+          <p>Toma unos minutos y no necesitas saber de tecnología.</p>
         </div>
+        <ol class="steps">
+          <li><h3>Confirma tu correo</h3><p>Entra a Insight y escribe tu correo. Te enviamos un código para confirmar que eres tú.</p></li>
+          <li><h3>Cuéntanos de tu negocio</h3><p>Nombre, sitio web y ciudad. Si quieres, también tus competidores.</p></li>
+          <li><h3>Recibe tus hallazgos</h3><p>Lo más importante que encontramos, explicado en lenguaje simple, y tu prioridad para enero.</p></li>
+          <li><h3>Platiquemos 15 minutos</h3><p><span class="opt">Opcional.</span> Si quieres, te explicamos por WhatsApp cómo resolverlo.</p></li>
+        </ol>
+      </div>
+    </section>
 
-        <div class="problem-grid">
-          <div class="panel">
-            <h3>Situación actual</h3>
-            <ul class="bad">
-              <li>Información dispersa.</li>
-              <li>Cobranza difícil de controlar.</li>
-              <li>Reportes incompletos.</li>
-              <li>Tiempo perdido buscando información.</li>
+    <section class="section">
+      <div class="shell">
+        <div class="section-title">
+          <h2>Qué incluye el diagnóstico gratis</h2>
+        </div>
+        <div class="grid-2">
+          <div class="scope in">
+            <h3>Sin costo</h3>
+            <ul>
+              <li>Resumen de tu presencia digital</li>
+              <li>Señales detectadas en tu sitio, correo y marca</li>
+              <li>Tu primer punto de atención para enero</li>
             </ul>
           </div>
-
-          <div class="panel">
-            <h3>Con JVSys</h3>
-            <ul class="good">
-              <li>Información centralizada.</li>
-              <li>Operaciones auditables.</li>
-              <li>Reportes claros.</li>
-              <li>Mayor visibilidad para decidir.</li>
+          <div class="scope out">
+            <h3>Si quieres ir más lejos</h3>
+            <ul>
+              <li>Plan de acción completo para tu equipo o agencia</li>
+              <li>Monitoreo semanal con avisos</li>
+              <li>Informe sellado y comparación contra tu diagnóstico anterior</li>
             </ul>
+            <p class="note">Disponible en los planes de Insight. Tú decides si lo necesitas.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="condoadmin">
-      <div class="shell deep">
+    <section class="section section-alt" id="nexopay">
+      <div class="shell nexo">
         <div>
-          <div class="eyebrow">Producto principal · Disponible en Beta</div>
-          <h2>Administra tu fraccionamiento con más control y menos esfuerzo.</h2>
+          <span class="soon">Próximamente · 2027</span>
+          <h2>Cobra con tarjeta, OXXO y SPEI desde una sola plataforma.</h2>
           <p>
-            Condo Admin centraliza control de acceso, cobranza, estados de cuenta,
-            reportes y comunicación para operar con más orden y menos improvisación.
+            NexoPay es la plataforma de cobro de JVSys. En 2027 estará disponible para que tu negocio
+            cobre, concilie y tenga el respaldo de cada pago en un solo lugar.
           </p>
-          <ul class="plain-list">
-            <li>Control de acceso y operación diaria.</li>
-            <li>Cobranza, adeudos y estados de cuenta.</li>
-            <li>Reportes administrativos y evidencia documental.</li>
+          <ul class="methods">
+            <li>Tarjeta</li>
+            <li>OXXO</li>
+            <li>SPEI</li>
           </ul>
-
-          <div class="hero-actions">
-            <a class="btn btn-blue" href="https://web-production-d14f76.up.railway.app/" target="_blank" rel="noopener noreferrer" data-jvsys-event="click_portal_clientes" data-jvsys-product="condoadmin" data-jvsys-location="condoadmin_section">Portal Condo Admin</a>
-            <a class="btn btn-gold" href="https://wa.me/522221144015?text=Hola%20JVSys.%0A%0AMe%20interesa%20recibir%20informaci%C3%B3n%20sobre%20Condo%20Admin.%0AGracias." target="_blank" rel="noopener noreferrer" data-jvsys-event="click_whatsapp_condoadmin" data-jvsys-product="condoadmin" data-jvsys-location="condoadmin_section">Solicitar información</a>
+          <div class="actions">
+            <a class="btn btn-ghost" href="https://wa.me/522221144015?text=Hola%20JVSys.%0A%0AQuiero%20que%20me%20avisen%20cuando%20NexoPay%20est%C3%A9%20disponible.%0AGracias." target="_blank" rel="noopener noreferrer" data-jvsys-event="click_whatsapp_nexopay" data-jvsys-product="nexopay" data-jvsys-location="nexopay_section">Quiero que me avisen</a>
           </div>
         </div>
-        <div class="deep-img">
-          <img src="Logo_Fracc.jpeg" alt="Condo Admin">
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="nexopay">
-      <div class="shell deep">
-        <div>
-          <div class="eyebrow">Producto estratégico · Desarrollo avanzado al 70%</div>
-          <div class="logo-plate nexopay-plate"><img src="Logo_NexoPay.png" alt="Logo NexoPay"></div>
-          <h2>Orden financiero para operaciones que necesitan visibilidad.</h2>
-          <p>
-            NexoPay sustituye comercialmente a JVSysBillingCore. La marca pública es NexoPay;
-            el núcleo técnico queda como arquitectura interna. Hacia el mercado se presenta como NexoPay, Powered by JVSys.
-          </p>
-          <ul class="plain-list">
-            <li>Pagos, cobros y conciliación.</li>
-            <li>Evidencia financiera y seguimiento documental.</li>
-            <li>Reportes claros para entender ingresos y pendientes.</li>
+        <div class="nexo-card">
+          <img src="Logo_NexoPay.png" alt="NexoPay, powered by JVSys">
+          <ul>
+            <li>Cobros y pagos en línea</li>
+            <li>Conciliación automática</li>
+            <li>Comprobante de cada movimiento</li>
           </ul>
-
-          <div class="hero-actions">
-            <a class="btn btn-gold" href="https://wa.me/522221144015?text=Hola%20JVSys.%0A%0AMe%20interesa%20recibir%20informaci%C3%B3n%20sobre%20NexoPay.%0AGracias." target="_blank" rel="noopener noreferrer" data-jvsys-event="click_whatsapp_nexopay" data-jvsys-product="nexopay" data-jvsys-location="nexopay_section">Solicitar información</a>
-          </div>
-        </div>
-        <div class="deep-img">
-          <img src="hero-nexopay.jpg" alt="NexoPay powered by JVSys">
         </div>
       </div>
     </section>
 
-    <section class="section" id="confianza">
+    <section class="section" id="preguntas">
       <div class="shell">
-        <div class="section-title">
-          <h2>¿Por qué elegir JVSys?</h2>
-          <p>Porque la tecnología debe ayudar a ordenar la operación, no complicarla.</p>
-        </div>
-        <div class="why-grid">
-          <div class="panel"><h3>Confianza y seguridad</h3><p>Información protegida y procesos diseñados para operar con evidencia.</p></div>
-          <div class="panel"><h3>Control e información</h3><p>Datos organizados para tomar decisiones con claridad.</p></div>
-          <div class="panel"><h3>Plataformas integradas</h3><p>Soluciones que crecen junto con tu operación.</p></div>
-          <div class="panel"><h3>Soporte que responde</h3><p>Acompañamiento humano y especializado.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="casos">
-      <div class="shell">
-        <div class="section-title"><h2>Casos de uso</h2></div>
-        <div class="use-grid">
-          <div class="panel"><h3>Condominios y fraccionamientos</h3></div>
-          <div class="panel"><h3>Cobranza y pagos empresariales</h3></div>
-          <div class="panel"><h3>Tesorería y control financiero</h3></div>
-          <div class="panel"><h3>Organizaciones en crecimiento</h3></div>
+        <div class="section-title"><h2>Preguntas frecuentes</h2></div>
+        <div class="faq">
+          <details>
+            <summary>¿De verdad es gratis?</summary>
+            <p>Sí. El diagnóstico de cierre no tiene costo y no te pedimos tarjeta.</p>
+          </details>
+          <details>
+            <summary>¿Qué datos necesitan?</summary>
+            <p>Tu correo, para enviarte el código y el resultado, y los datos básicos de tu negocio: nombre, sitio web y ciudad.</p>
+          </details>
+          <details>
+            <summary>¿Van a tocar o modificar mi sitio web?</summary>
+            <p>No. Insight solo revisa información pública, la misma que ve cualquier persona que visita tu sitio.</p>
+          </details>
+          <details>
+            <summary>¿Hasta cuándo puedo pedirlo?</summary>
+            <p>El diagnóstico de cierre 2026 está disponible hasta el 31 de diciembre.</p>
+          </details>
+          <details>
+            <summary>¿Y después del diagnóstico?</summary>
+            <p>Tú decides. Puedes quedarte con tus hallazgos o, si quieres el plan de acción completo y el monitoreo, contratar un plan de Insight.</p>
+          </details>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <div class="shell close">
-        <h2>El siguiente paso puede ser más simple de lo que imaginas.</h2>
-        <p>Conoce cómo Condo Admin y NexoPay pueden ayudarte a tener más control, mejor información y procesos más organizados.</p>
-        <div class="hero-actions">
-          <a class="btn btn-gold" href="https://wa.me/522221144015?text=Hola%20JVSys.%0A%0AMe%20interesa%20recibir%20informaci%C3%B3n%20sobre%3A%0A%E2%96%A1%20Condo%20Admin%0A%E2%96%A1%20NexoPay%0A%0AGracias." target="_blank" rel="noopener noreferrer" data-jvsys-event="click_whatsapp_general" data-jvsys-product="general" data-jvsys-location="hero">Solicitar información</a>
-          <a class="btn btn-blue" href="https://web-production-d14f76.up.railway.app/" target="_blank" rel="noopener noreferrer">Portal Clientes</a>
+      <div class="shell">
+        <div class="close">
+          <h2>Empieza 2027 con un plan claro.</h2>
+          <p>Pide tu diagnóstico de cierre antes del 31 de diciembre y entra al año sabiendo qué corregir primero.</p>
+          <div class="actions">
+            <a class="btn btn-gold" href="https://insight.jvsys.com.mx/?utm_source=jvsys.com.mx&amp;utm_medium=web&amp;utm_campaign=cierre2026" target="_blank" rel="noopener noreferrer" data-jvsys-event="click_insight_diagnostico" data-jvsys-product="insight" data-jvsys-location="close">Solicita tu diagnóstico gratis</a>
+          </div>
+          <p class="phone">¿Prefieres escribirnos? WhatsApp <b>222 114 4015</b></p>
         </div>
       </div>
     </section>
   </main>
 
-  <a class="whatsapp-float" href="https://wa.me/522221144015?text=Hola%20JVSys.%0A%0AMe%20interesa%20recibir%20informaci%C3%B3n.%0AGracias." target="_blank" rel="noopener noreferrer" data-jvsys-event="click_whatsapp_general" data-jvsys-product="general" data-jvsys-location="floating_button">Solicitar información</a>
+  <a class="wa-float" href="https://wa.me/522221144015?text=Hola%20JVSys.%0A%0AQuiero%20informaci%C3%B3n%20sobre%20el%20diagn%C3%B3stico%20de%20cierre%202026.%0AGracias." target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp" data-jvsys-event="click_whatsapp_insight" data-jvsys-product="insight" data-jvsys-location="floating_button">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2c.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+    <span>WhatsApp</span>
+  </a>
 
   <footer class="footer">
     <div class="shell footer-grid">
       <div>
-        <img class="brand-logo" src="Logo_JVsys.png" alt="JVSys">
         <h3>JVSys</h3>
-        <p>Plataformas empresariales para administración, control operativo y gestión financiera.</p>
+        <p>Plataformas empresariales para entender y controlar tu operación.</p>
+        <p class="others" style="margin-top:12px">Otras plataformas JVSys: Condo Admin · NidoSys · Invicta</p>
       </div>
       <div>
-        <h3>Plataformas</h3>
-        <a href="#condoadmin">Condo Admin · Beta</a>
-        <a href="#nexopay">NexoPay · 70%</a>
-        <a href="#plataformas">NidoSys · Próximamente</a>
-        <a href="#plataformas">Invicta · Próximamente</a>
+        <h3>Productos</h3>
+        <a href="#insight">Insight</a>
+        <a href="#nexopay">NexoPay · 2027</a>
       </div>
       <div>
         <h3>Contacto</h3>
-        <a href="https://wa.me/522221144015" target="_blank" rel="noopener noreferrer">WhatsApp México: 222 114 4015</a>
-        <a href="https://web-production-d14f76.up.railway.app/" target="_blank" rel="noopener noreferrer">Portal Clientes Condo Admin</a>
+        <a href="https://wa.me/522221144015" target="_blank" rel="noopener noreferrer" data-jvsys-event="click_whatsapp_general" data-jvsys-product="general" data-jvsys-location="footer">WhatsApp: 222 114 4015</a>
+        <a href="https://web-production-d14f76.up.railway.app/" target="_blank" rel="noopener noreferrer" data-jvsys-event="click_portal_clientes" data-jvsys-product="condoadmin" data-jvsys-location="footer">Acceso para clientes actuales</a>
       </div>
     </div>
-    <div class="shell footer-bottom">
-      <div>© 2026 JVSys. Todos los derechos reservados.</div>
-      <div>Pendiente estratégico: versión /en/ con traducción profesional propia.</div>
-    </div>
+    <div class="shell footer-bottom">© 2026 JVSys. Todos los derechos reservados.</div>
   </footer>
 
   <script>
     /*
-      JVSys Digital Intelligence Layer v1.2
-      Propósito:
-      Registrar eventos comerciales no invasivos en Google Analytics 4.
-      No captura nombres, correos, teléfonos ni información sensible.
-      Esta capa evita doble medición al usar únicamente el Measurement ID oficial JVSys.com.mx.
+      JVSys Digital Intelligence Layer v1.3
+      Registra clics comerciales en GA4. No captura nombres, correos, teléfonos ni datos sensibles.
     */
     document.addEventListener('DOMContentLoaded', function () {
-      var trackedElements = document.querySelectorAll('[data-jvsys-event]');
+      // La barra de campaña se oculta sola después de su fecha límite.
+      var promo = document.getElementById('promo');
+      if (promo) {
+        var hasta = new Date(promo.getAttribute('data-hasta') + 'T23:59:59-06:00');
+        if (new Date() > hasta) { promo.hidden = true; }
+      }
 
-      trackedElements.forEach(function (element) {
+      document.querySelectorAll('[data-jvsys-event]').forEach(function (element) {
         element.addEventListener('click', function () {
           var eventName = element.getAttribute('data-jvsys-event') || 'click_jvsys_unknown';
-          var eventPayload = {
+          var payload = {
             jvsys_product: element.getAttribute('data-jvsys-product') || 'general',
             jvsys_location: element.getAttribute('data-jvsys-location') || 'unknown',
             jvsys_page: window.location.pathname || '/',
-            jvsys_channel: 'website'
+            jvsys_channel: 'website',
+            jvsys_campaign: 'cierre2026'
           };
-
-          if (typeof gtag === 'function') {
-            gtag('event', eventName, eventPayload);
-          }
-
-          window.dataLayer = window.dataLayer || [];
-          window.dataLayer.push(Object.assign({ event: eventName }, eventPayload));
+          if (typeof gtag === 'function') { gtag('event', eventName, payload); }
         });
       });
     });
   </script>
-
+  <style>[hidden]{display:none !important}</style>
 </body>
 </html>
 <!--
 FIN DEL ARCHIVO
 ARCHIVO: index.html
-VERSIÓN: v3.2.1
-FECHA: 2026-05-29
-TOTAL DE LÍNEAS: 913
+VERSIÓN: v4.0.0
+FECHA: 2026-11-13
 -->
